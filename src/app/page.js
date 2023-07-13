@@ -1,12 +1,20 @@
-import Link from 'next/link'
-import classes from './page.module.css'
+import { Header, Work } from "./components"
+import blogs from "./json/Blogs"
+import projects from "./json/Projects"
+
+
+export const metadata = {
+  title: 'Portfolio | Phuad',
+}
 
 export default function Home() {
   return (
-    <main className={ classes.main }>
-      <h2>Hello</h2>
-      <a href="about">route</a>
-      <Link href='./about'>About</Link>
-    </main>
+    <>
+      <Header />
+      <div className="container">
+        <Work title="Web Projects" list={projects} />
+        <Work title="Blog Posts" list={blogs} />
+      </div>
+    </>
   )
 }

@@ -1,6 +1,7 @@
+"use client"
 import { motion } from "framer-motion"
 
-export const Header = () => {
+const Header = () => {
     return (
         <header className='header'>
             <div className="container flex">
@@ -43,4 +44,6 @@ export const Header = () => {
             </style>
         </header>
     )
-}
+};
+
+export default Header;

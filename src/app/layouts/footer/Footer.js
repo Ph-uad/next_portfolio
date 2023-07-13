@@ -1,3 +1,4 @@
+"use client";
 import { FooterBg } from "@/public";
 
 const Footer = () => {
