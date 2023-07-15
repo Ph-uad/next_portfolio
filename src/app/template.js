@@ -1,4 +1,4 @@
-import { Footer, MainNavigation } from "./layouts";
+import { Footer, MainNavigation } from "./components/layouts";
 
 export default function Template({ children }) {
     return (<>
