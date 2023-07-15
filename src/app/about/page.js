@@ -1,15 +1,27 @@
+import { Article } from '../components'
+import { DomData } from '../json/domData'
 import classes from './about.module.css'
+import { Rubik_Moonrocks } from 'next/font/google'
+
+const rubik = Rubik_Moonrocks({ weight: '400', subsets: ['latin'] });
 
 export const metadata = {
-  title : 'About'
+  title: 'About'
 }
 
 export default function About() {
   return (
-  <>
-    <main className={classes.main}>
-      <h2>About Page</h2>
-    </main>
-  </>
+    <>
+      <header className={ `${rubik.className} , ${classes.header}` }>
+        <h2>Novum Testamentum</h2>
+        <h2>Romani</h2>
+        <h2> ٣-٤</h2>
+      </header>
+      
+      <main className="container">
+        <Article data={ DomData.bio } />
+        <Article data={ DomData.insight } />
+      </main>
+    </>
   )
 }
