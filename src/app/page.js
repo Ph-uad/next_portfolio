@@ -12,8 +12,8 @@ export default function Home() {
     <>
       <Header />
       <div className="container">
-        <Work title="Web Projects" list={projects} />
-        <Work title="Blog Posts" list={blogs} />
+          <Work title="Web Projects" list={ projects } /> 
+          <Work title="Blog Posts" list={ blogs } />
       </div>
     </>
   )

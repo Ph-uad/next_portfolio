@@ -12,7 +12,7 @@ const Header = () => {
                         animate={ { opacity: 1, y: 0 } }
                         transition={ { delay: 1, duration: 1.5 } }
                     >
-                        <p className='color-gray'> "If no mistake have you made, yet losing you are, a different game you should play."</p>
+                        <p className='color-gray'> "If no mistake have you made yet, losing you are, a different game you should play."</p>
                         <h3 className="heading-tertiary color-gray"></h3>
                     </motion.blockquote>
                     <motion.figcaption className="color-gray"
