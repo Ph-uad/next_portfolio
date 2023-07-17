@@ -3,8 +3,6 @@ import { useState } from "react";
 
 const Work = ({ title, list }) => {
 
-  const [selectedId, setSelectedId] = useState(null);
-
   const listItem = list.map((item, index) => (
     <li key={ index + item.title } className='works flex'>
       <div className="details">
@@ -21,7 +19,7 @@ const Work = ({ title, list }) => {
 
   return (
     <section className="section">
-      <h1>{ title }</h1>
+      <h2>{ title }</h2>
       <ul className="grid">
         { listItem }
       </ul>
