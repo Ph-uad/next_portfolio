@@ -1,16 +1,14 @@
-
-
 const Article = ({ data }) => {
-    console.log( data);
+ 
     return (
-        <article>
+        <article className="m-y">
             <header>
-                <h3>
+                <h2>
                     { data.title }
-                </h3>
+                </h2>
             </header>
             { data.message.map((d, index) => (
-                <p key={ index }>
+                <p style={{maxWidth:'60rem'}} key={ index }>
                     { d }
                 </p>
             )) }
