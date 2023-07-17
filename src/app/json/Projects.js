@@ -19,7 +19,12 @@ const projects = [
         link: "https://ph-uad.github.io/figma-Foundation/",
         gitLink: ""
     },
-  
+    {
+        title : "Foods",
+        poster : ,
+        link : "https://seer-delta.vercel.app/recipe",
+        gitlink : ""
+    }
 ]
 
 export default projects 
