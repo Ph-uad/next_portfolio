@@ -38,7 +38,7 @@ const Footer = () => {
                     }
 
                     li:not(:last-child){
-                        border-right: 1px solid #333;
+                        border-right: 1px solid var(--color-text);
                         padding-right:1.6rem;
                     }
                     `
