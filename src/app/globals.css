@@ -36,6 +36,7 @@
 body {
   color: var(--color-text);
   background: var(--bg-color);
+  font-size: clamp(1.4rem, 1.6vw, 1.6rem);
 }
 
 h1,
@@ -70,9 +71,8 @@ p {
   color: var(--color-primary-transparent);
 }
 
-.heading-senary {
-  font-size: clamp(1.4rem, 1.6vw, 1.6rem);
-  text-transform: uppercase;
+figcaption{
+ 
 }
 
 .text-italic {
