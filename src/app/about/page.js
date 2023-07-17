@@ -1,4 +1,4 @@
-import { Article } from '../components'
+import { Article, Process } from '../components'
 import { DomData } from '../json/domData'
 import classes from './about.module.css'
 import { Rubik_Moonrocks } from 'next/font/google'
@@ -17,10 +17,11 @@ export default function About() {
         <h2>Romani</h2>
         <h2> ٣-٤</h2>
       </header>
-      
-      <main className="container">
+
+      <main className={`container ${classes['main']}`}>
         <Article data={ DomData.bio } />
         <Article data={ DomData.insight } />
+        <Process />
       </main>
     </>
   )
