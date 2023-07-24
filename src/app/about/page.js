@@ -1,5 +1,5 @@
 import { Article, Process } from '../components'
-import { DomData } from '../json/domData'
+import { DomData } from '../data/domData'
 import classes from './about.module.css'
 import { Rubik_Moonrocks } from 'next/font/google'
 
