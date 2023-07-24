@@ -1,6 +1,6 @@
 import { Header, Work } from "./components"
-import blogs from "./json/Blogs"
-import projects from "./json/Projects"
+import blogs from "./data/Blogs"
+import projects from "./data/Projects"
 
 
 export const metadata = {
