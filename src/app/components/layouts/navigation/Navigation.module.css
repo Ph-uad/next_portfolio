@@ -4,18 +4,34 @@
     top: 0;
     width: 100%;
     flex-wrap: wrap;
-    z-index: 10;
+    z-index: 2000;
     font-size: clamp(1.2rem, 2vw, 1.4rem);
+    background: linear-gradient(80deg, var(--color-primary-transparent2)60%, var(--bg-color)61%);
     background: var(--bg-color);
     backdrop-filter: invert(90%);
     padding: 1rem;
 }
 
-.navigation_list{
+.navigation_list {
     max-width: 20rem;
     margin-left: 80%;
 }
 
+@media (max-width:64em) {
+    .navigation_list ul {
+        gap: 4rem;
+    }
+}
+
+
 .navigation_list>ul li {
     text-transform: uppercase;
+}
+
+.navigation_list ul li a {
+    padding: 1.6rem;
+}
+
+.pending {
+    color: green;
 }
