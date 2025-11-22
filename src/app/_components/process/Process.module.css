@@ -1,0 +1,34 @@
+.process__list {
+  margin-top: 2rem;
+  margin-left: auto;
+  display: flex;
+  gap: 1%;
+  justify-content: flex-end;
+}
+
+@media (min-width: 64em) {
+  .process__list,
+  .process__list>div p {
+    width: 60%;
+  }
+}
+
+.process__list>div {
+  flex: 0 80%;
+}
+
+
+.process__list>div h3 {
+  text-align: right;
+
+}
+
+.process__list>div h3 {
+  border-bottom: 1px solid #333;
+}
+
+@media (prefers-color-scheme: dark) {
+  .process__list>div h3 {
+    border-bottom: 1px solid #dad9d9;
+  }
+}

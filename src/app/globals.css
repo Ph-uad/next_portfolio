@@ -1,30 +1,28 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import "tailwindcss";
+@tailwind utilities;
 
 :root {
   color-scheme: light dark;
   line-height: 1.7;
   font-size: clamp(35%, 62.5%, 80%);
   word-spacing: 1.4px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 
   --color-text: #131312;
+  --color-text-white: #ededed;
   --color-text-dark: var(--accent-color-1);
   --bg-color: #ededed;
 
   --color-primary-transparent: #15161061;
-  --color-primary-transparent2: #ededede7;
-}
+  --color-primary-transparent-light: #ededede7;
 
-@media (prefers-color-scheme:dark) {
+  /* --bg-texture: url("/backgrounds/bg-texture3.webp"); */
+}
+@media (prefers-color-scheme: dark) {
   :root {
- 
-    --color-text: #EEEEEE;
+    --color-text: #eeeeee;
     --color-text-dark: var(--accent-color-1);
     --bg-color: #141414;
 
@@ -33,13 +31,38 @@
   }
 }
 
-body {
-  color: var(--color-text);
-  background: var(--bg-color);
-  font-size: clamp(1.4rem, 1.6vw, 1.6rem);
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+    overscroll-behavior: none;
+  }
+
+  body {
+    color: var(--color-text);
+    background: var(--bg-color);
+    font-size: clamp(1.4rem, 1.6vw, 1.6rem);
+  }
 }
 
-h1,
+@layer components {
+  .container {
+    margin: auto;
+    background-color: red;
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 2.4;
+  }
+}
+
+/* h1,
 h2,
 h3 {
   text-transform: capitalize;
@@ -70,10 +93,7 @@ p {
 .color-gray {
   color: var(--color-primary-transparent);
 }
-
-figcaption{
  
-}
 
 .text-italic {
   font-style: italic;
@@ -83,7 +103,6 @@ figcaption{
   text-transform: lowercase;
 }
 
-/*  */
 .list {
   padding: 1rem;
 }
@@ -91,12 +110,12 @@ figcaption{
 .list_item {
   list-style: none;
   text-transform: capitalize;
-}
+} */
 
 /*  */
 
 /* Layout */
-.m-y{
+/* .m-y{
   margin: 5rem 0;
 }
 
@@ -127,17 +146,16 @@ figcaption{
   .container {
     padding: 2.5% 15%;
   }
-}
+} */
 
-@media (min-width:64em) {
+/* @media (min-width:64em) {
   .width-min {
     width: 40%;
   }
-}
-
+} */
 
 /* utilities */
-.right {
+/* .right {
   margin-left: auto;
 }
 
@@ -174,10 +192,6 @@ figcaption{
   color: var(--color-text);
 }
 
-/*  */
-
-/* Utilities */
- 
 .image {
   width: 100%;
   height: 100%;
@@ -185,15 +199,12 @@ figcaption{
 }
 
 a,
-a>* {
+a > * {
   color: inherit;
   text-decoration: none;
   cursor: pointer;
 }
 
-
-
-/* Generic Styles */
 
 .grid {
   display: grid;
@@ -239,11 +250,7 @@ a>* {
   border: 1px solid #ededed;
 }
 
-
-
-
-
-/* Desktop */
+/* Desktop
 
 @media (min-width:64em) {
   .grid {
@@ -257,4 +264,4 @@ a>* {
     grid-row: 1 /span 2;
   }
   
-}
+} */
