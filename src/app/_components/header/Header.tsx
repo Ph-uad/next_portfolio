@@ -4,18 +4,21 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="mx-auto my-10 text-left flex align-bottom justify-between gap-10 ">
-      <div className="w-2/4 ">
-        <h1 className="text-6xl leading-[2.4]">Hi i am Phuad</h1>
-        <p className="text-2xl opacity-75">
-          I am passionate about digital transformation and collaborating with
-          creative minds, including developers, UI/UX designers, and
-          stakeholders. Additionally, I enjoy analyzing complex data sets to
-          extract valuable insights, which brings me a profound sense of
-          satisfaction.
+    <header className=" flex align-bottom justify-between gap-10 ">
+      <div className="mt-80 w-9/12 mx-auto flex flex-col text-center">
+        <h1 className="text-title font-extrabold leading-normal">Phuad</h1>
+        <p className="text-body">
+          A <strong className="font-extrabold">software engineer</strong> passionate about{" "}
+          <strong className="font-extrabold">digital transformation</strong> and
+          collaborating with <strong className="font-extrabold">creative minds</strong>,
+          including developers, UI/UX designers, and stakeholders. Additionally,
+          I enjoy <strong className="font-extrabold">analyzing complex data sets </strong> to
+          extract <strong className="font-extrabold">valuable insights</strong>, which brings
+          me a profound data sets to extract valuable insights, which brings me
+          a profound sense of satisfaction.
         </p>
       </div>
-      <button
+      {/* <button
         className="h-fit px-4 py-2 border border-(--color-primary-transparent-light) rounded-md
             hover:bg-(--color-primary-transparent-light) 
             hover:text-black
@@ -25,7 +28,7 @@ const Header = () => {
             "
       >
         <Link href="/">Get in Touch</Link>
-      </button>
+      </button> */}
     </header>
   );
 };

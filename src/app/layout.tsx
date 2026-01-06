@@ -3,7 +3,7 @@ import * as React from "react";
 import { Inter, Roboto } from "next/font/google";
 import type { Metadata } from "next";
 
-const inter = Inter({ weight: ["400", "300"], subsets: ["latin"] });
+const inter = Inter({ weight: ["700", "600", "400", "300"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
@@ -54,7 +54,7 @@ export default function RootLayout({
     <html lang="en">
       {/* <link rel="icon" href="./favicon.ico" sizes="any" /> */}
       <body
-        className={`${inter.className} bg-[url('/backgrounds/bg-texture3.webp')] bg-cover before:absolute before:inset-0 before:bg-neutral-900/90 before:pointer-events-none relative`}
+        className={`${inter.className} `}
       >
         {children}
       </body>
