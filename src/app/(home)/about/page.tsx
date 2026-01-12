@@ -1,7 +1,7 @@
 import classes from "./about.module.css";
 import { Rubik_Moonrocks } from "next/font/google";
-import { Article, Process } from "../_components";
-import { DomData } from "../_data/domData";
+import { Article, Process } from "../../_components";
+import { DomData } from "../../_data/domData";
 
 const rubik = Rubik_Moonrocks({ weight: "400", subsets: ["latin"] });
 

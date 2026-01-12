@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <main className="w-screen h-screen overflow-hidden flex flex-col ">
+    <main className="page w-screen h-screen overflow-hidden flex flex-col ">
       <Header />
       <div className=" mt-auto flex flex-col md:flex-row gap-6 md:gap-32  ml-[50%] text-xl">
         <div className="">
@@ -20,17 +20,16 @@ export default function HomePage() {
           <p>
             {" "}
             just completed an <strong>MS</strong>c in Big Data Analysis{" "}
-          </p>
-          <Link href="/about#experience">
-            <button
+            <Link
+              href="/about#experience"
               className="underline mt-2 mb-6 hover:underline-offset-4 transition-all
             duration-300
             ease-in-out
             "
             >
               Read More
-            </button>
-          </Link>
+            </Link>
+          </p>
         </div>
         <div className="">
           <h4>Contact,</h4>

@@ -9,15 +9,15 @@ const MainNavigation = () => {
       <section className="flex justify-between w-4/5 md:w-11/12 mx-auto uppercase mt-[35px] md:mt-[40px]">
         <ul className="flex justify-between  ">
           <li className="">
-            <Link href="/">logo</Link>
+            <Link href="/">Logo</Link>
           </li>
         </ul>
         <ul className="flex justify-between gap-x-10 ">
           <li className="">
-            <Link href="/">logo</Link>
+            <Link href="/experience">Experience</Link>
           </li>
           <li className="">
-            <Link href="/">logo</Link>
+            <Link href="/">Projects</Link>
           </li>
           <li className="list_item">
             <Link href="/about">About</Link>
@@ -25,7 +25,7 @@ const MainNavigation = () => {
         </ul>
         <ul className="flex justify-between">
           <li className="">
-            <Link href="/">logo</Link>
+            <Link href="/">Conversations</Link>
           </li>
         </ul>
       </section>
