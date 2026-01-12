@@ -12,10 +12,11 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <main className="page w-screen h-screen overflow-hidden flex flex-col ">
+    <main className="page">
       <Header />
-      <div className=" mt-auto flex flex-col md:flex-row gap-6 md:gap-32  ml-[50%] text-xl">
-        <div className="">
+      <div className="self-end p-10 flex flex-col md:flex-row gap-6 md:gap-32 text-right text-xl">
+
+        <div className="flex-grow-0 w-96">
           <h4>Recently,</h4>
           <p>
             {" "}
@@ -31,7 +32,7 @@ export default function HomePage() {
             </Link>
           </p>
         </div>
-        <div className="">
+        <div className="flex-grow-0">
           <h4>Contact,</h4>
           <ul>
             <li>
@@ -39,6 +40,7 @@ export default function HomePage() {
             </li>
           </ul>
         </div>
+
       </div>
     </main>
   );

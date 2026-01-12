@@ -51,6 +51,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scrollbar-width: none;
   }
   html {
     scroll-behavior: smooth;
@@ -72,12 +73,13 @@
 
   @layer utilities {
     .page {
-      width: 95vw;
-      height: 90vh;
+      width: 100vw;
+      height: 95vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      margin: 10rem auto 0 auto;
+      align-items: center;
+      margin: 0 auto 0 auto;
     }
   }
 
@@ -104,3 +106,19 @@
   animation-timeline: view();
   animation-range: contain;
 } */
+
+.surf-text {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  unicode-bidi: isolate;
+  margin-left: -1px;
+  margin-right: -1px;
+  width: fit-content;
+}
+
+.surf-text > p {
+  position: relative;
+  will-change: transform;
+  /* transform: translate3d(0, 110%, 0); */
+}

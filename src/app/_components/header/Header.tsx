@@ -4,10 +4,10 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className=" flex align-bottom justify-between gap-10 ">
-      <div className="mt-80 w-9/12 mx-auto flex flex-col text-center">
+    <header className="flex-1 flex justify-center items-center p-10">
+      <div className="h-fit flex flex-col text-center p-10">
         <h1 className="text-title font-extrabold leading-normal">Phuad</h1>
-        <p className="text-body">
+        <p className="text-body w-4/5 md:w-3/5 self-center">
           A <strong className="font-extrabold">software engineer</strong> passionate about{" "}
           <strong className="font-extrabold">digital transformation</strong> and
           collaborating with <strong className="font-extrabold">creative minds</strong>,

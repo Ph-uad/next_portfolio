@@ -3,10 +3,10 @@ import Link from "next/link";
 const MainNavigation = () => {
   return (
     <nav
-      className="flex flex-col md:flex-row items-center absolute top-0 w-screen overflow-x-hidden flex-wrap z-2000 text-(--color-text-white)
+      className="h-[5vh] w-screen border-b border-black flex justify-center items-center sticky top-0  overflow-x-hidden flex-wrap z-2000 text-(--color-text-white)
                  text-[clamp(1.2rem,2vw,1.4rem)] "
     >
-      <section className="flex justify-between w-4/5 md:w-11/12 mx-auto uppercase mt-[35px] md:mt-[40px]">
+      <section className="flex self-center justify-between w-4/5 md:w-11/12 mx-auto uppercase ">
         <ul className="flex justify-between  ">
           <li className="">
             <Link href="/">Logo</Link>
