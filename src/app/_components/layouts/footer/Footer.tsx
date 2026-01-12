@@ -11,8 +11,12 @@ const Footer = () => {
                 <section>
                     <h6 className="heading-senary">Get in Touch</h6>
                     <ul className="list flex">
-                        <li className="list_item">LinkedIn</li>
-                        <li className="list_item">Mail</li>
+                        <li className="list_item">
+                            <a href="https://linkedin.com/in/YOUR_PROFILE" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        </li>
+                        <li className="list_item">
+                            <a href="mailto:your@email.com">Mail</a>
+                        </li>
                     </ul>
                 </section>
 

@@ -14,14 +14,17 @@ interface WorkProps {
 const Work = ({ title, list }: WorkProps) => {
 
   const listItem = list.map((item, index) => (
-    <li key={ index + item.title } className='works flex'>
+    <li
+      key={ index + item.title }
+      className='works flex'
+      style={{
+        backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.367), rgba(0, 0, 0, 0.524)), url(${item.poster})`
+      }}
+    >
       <div className="details">
         <h3>{ item.title }</h3>
-        <a href={ `${item.link}` }>Visit Site</a>
+        <a href={item.link}>Visit Site</a>
       </div>
-      <style jsx>
-        {`.works{background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.3666666667), rgba(0, 0, 0, 0.5235294118)), url(${item.poster})}`}
-      </style>
     </li>
   ))
 

@@ -38,11 +38,11 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-text-dark: var(--accent-color-1);
-    --bg-color: #141414;
+    --color-text: var(--accent-color-1);
+    --background-color: #141414;
 
     --color-primary-transparent: #ffffff3a;
-    --color-primary-transparent2: #141414e7;
+    --color-primary-transparent-light: #141414e7;
   }
 }
 
@@ -68,7 +68,6 @@
 @layer components {
   .container {
     margin: auto;
-    background-color: red;
   }
 
   @layer utilities {
@@ -101,11 +100,7 @@
   }
 }
 
-/* p {
-  animation: fadeInUp linear;
-  animation-timeline: view();
-  animation-range: contain;
-} */
+ 
 
 .surf-text {
   position: relative;
@@ -119,6 +114,5 @@
 
 .surf-text > p {
   position: relative;
-  will-change: transform;
-  /* transform: translate3d(0, 110%, 0); */
+  will-change: transform; 
 }

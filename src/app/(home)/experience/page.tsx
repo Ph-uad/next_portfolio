@@ -4,13 +4,12 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { CompanyTitle } from "./_components/company_title";
-import { useEffect, useRef, useState } from "react";
+import {  useState } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ExperiencePage = () => {
-  gsap.registerPlugin(ScrollTrigger);
-
-  // const tl = useRef<any>(null);
-
+ 
   const [activeIndex, setActiveIndex] = useState(0);
   const onClick = (index: number) => {
     setActiveIndex(index);
@@ -41,7 +40,7 @@ const ExperiencePage = () => {
       height: "fit-content",
       stagger: 0.2,
       duration: 1.5,
-      ease: "ease.out",
+      ease: "power2.out",
     });
 
     gsap.to("#companies", {

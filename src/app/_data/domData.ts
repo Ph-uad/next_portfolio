@@ -4,7 +4,7 @@ export const DomData = {
         title: "bio",
         message: [
             `I am a web developer, on the path to hone the skill of web development by 
-             testing relative concepts used by the industry to build web interfacesthat deliver clear 
+             testing relative concepts used by the industry to build web interfaces that deliver clear 
              and intended message with appealing designs.`,
             ` I am focused on web performance and design concepts. I love learning new concepts that brings
              intended results to web performances.`

@@ -1,6 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
-import Link from "next/link";
+ 
 
 const Header = () => {
   return (
@@ -12,23 +11,11 @@ const Header = () => {
           <strong className="font-extrabold">digital transformation</strong> and
           collaborating with <strong className="font-extrabold">creative minds</strong>,
           including developers, UI/UX designers, and stakeholders. Additionally,
-          I enjoy <strong className="font-extrabold">analyzing complex data sets </strong> to
-          extract <strong className="font-extrabold">valuable insights</strong>, which brings
-          me a profound data sets to extract valuable insights, which brings me
-          a profound sense of satisfaction.
+           I enjoy <strong className="font-extrabold">analyzing complex data sets </strong> to
+           extract <strong className="font-extrabold">valuable insights</strong>, which brings
+           me a profound sense of satisfaction. 
         </p>
       </div>
-      {/* <button
-        className="h-fit px-4 py-2 border border-(--color-primary-transparent-light) rounded-md
-            hover:bg-(--color-primary-transparent-light) 
-            hover:text-black
-            transition-colors
-            duration-300
-            ease-in-out
-            "
-      >
-        <Link href="/">Get in Touch</Link>
-      </button> */}
     </header>
   );
 };
