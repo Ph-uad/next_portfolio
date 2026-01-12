@@ -38,7 +38,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-text: var(--accent-color-1);
+    --color-text: var(--accent-color-1, #efefef);
     --background-color: #141414;
 
     --color-primary-transparent: #ffffff3a;

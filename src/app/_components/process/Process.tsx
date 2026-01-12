@@ -24,7 +24,7 @@ const Process = () => {
                         <div className="">
                             <h3 className="heading-tertiary text-right process-title">Research</h3>
                             <p className=" width-min paragraph right">
-                                The project mostly have a range of existing competition and ideas. Try to understand the audience requiremnt
+                                The project mostly have a range of existing competition and ideas. Try to understand the audience requirement
                                 and expectations.
                             </p>
                         </div>
@@ -43,7 +43,7 @@ const Process = () => {
                         <div className="">
                             <h3 className="heading-tertiary text-right process-title">Development</h3>
                             <p className=" width-min paragraph right">
-                                Building of the product commence. After negotiation and approvement.
+                                Building of the product commences after negotiation and approval.
                             </p>
                         </div>
                     </li>
