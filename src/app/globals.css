@@ -88,7 +88,7 @@
     line-height: 2.4;
   }
 }
-
+/* 
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -98,7 +98,7 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
+} */
 
  
 
@@ -114,5 +114,5 @@
 
 .surf-text > p {
   position: relative;
-  will-change: transform; 
+  /* will-change: transform;  */
 }

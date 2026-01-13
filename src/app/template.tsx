@@ -1,6 +1,7 @@
+
 import * as React from "react";
 import MainNavigation from "./_components/layouts/navigation/Navigation";
-import Footer from "./_components/layouts/footer/Footer";
+// import Footer from "./_components/layouts/footer/Footer";
 
 
 export default function Template({ children }: { children?: React.ReactNode }) {

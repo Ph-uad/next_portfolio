@@ -1,7 +1,7 @@
-import "./globals.css";
 import * as React from "react";
-import { Inter, Roboto } from "next/font/google";
+import { Inter} from "next/font/google";
 import type { Metadata } from "next";
+import "./globals.css";
 
 const inter = Inter({
   weight: ["700", "600", "400", "300"],
@@ -54,9 +54,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      {/* <link rel="icon" href="./favicon.ico" sizes="any" /> */}
-      <body className={`${inter.className}`}>{children}</body>
+    <html lang="en"> 
+      <body className={`${inter.className}`} suppressHydrationWarning>{children}</body>
     </html>
   );
 }
