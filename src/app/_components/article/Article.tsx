@@ -1,5 +1,7 @@
 "use client";
 
+import { CompanyTitle } from "../../(home)/experience/_components/company_title";
+
 interface ArticleProps {
     data: {
         title: string;
@@ -11,14 +13,12 @@ interface ArticleProps {
 const Article = ({ data }: ArticleProps) => {
  
     return (
-        <article className="m-y">
+        <article className="w-full">
             <header>
-                <h2>
-                    { data.title }
-                </h2>
+                <CompanyTitle title={ data.title } />
             </header>
             { data.message.map((d, index) => (
-                <p style={{maxWidth:'60rem'}} key={ index }>
+                <p key={ index }>
                     { d }
                 </p>
             )) }

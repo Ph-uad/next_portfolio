@@ -1,6 +1,7 @@
 
+
 import * as React from "react";
-import { Inter} from "next/font/google";
+import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -55,8 +56,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en"> 
-      <body className={`${inter.className}`} suppressHydrationWarning>{children}</body>
+    <html lang="en">
+      <body className={`${inter.className}`} suppressHydrationWarning>
+        {children}
+      </body>
     </html>
   );
 }
