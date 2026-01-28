@@ -4,7 +4,7 @@ export default function ExperienceLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className={`}`} suppressHydrationWarning>
+    <div>
       {children}
     </div>
   );

@@ -6,8 +6,8 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="footer flex ">
-      <div className="self-end p-10 flex flex-col md:flex-row gap-6 md:gap-32 text-right text-xl">
+    <footer className="absolute bottom-0 right-0">
+      <div className="w-fit p-10 flex flex-col md:flex-row gap-6 md:gap-32 text-right text-xl">
         <div className="flex-grow-0 w-96">
           <h4>Recently,</h4>
           <p>
@@ -30,28 +30,6 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      {/* <div className="container flex ">
-        <section></section>
-
-        <section>
-          <h6 className="heading-senary">Get in Touch</h6>
-          <ul className="list flex">
-            <li className="list_item">
-              <a
-                href="https://linkedin.com/in/YOUR_PROFILE"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                LinkedIn
-              </a>
-            </li>
-            <li className="list_item">
-              <a href="mailto:your@email.com">Mail</a>
-            </li>
-          </ul>
-        </section>
-      </div> */}
-     
     </footer>
   );
 };

@@ -9,30 +9,31 @@
   word-spacing: 1.4px;
   color-scheme: light dark;
   font-size: clamp(35%, 62.5%, 80%);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 
   --color-text: #101010;
   --body-text-size: 1.4rem;
-  --title-text-size: 7.4rem;
-  --background-color: #efefef;
+  --title-text-size: 40.8rem;
+  --background-color: #e0eae9;
+  --linear-gradient: linear-gradient(135deg,rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%);
 
   --color-primary-transparent: #15161061;
   --color-primary-transparent-light: #ededede7;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --title-text-size: 7.8rem;
+    --body-text-size: 2.4rem;
+  }
 }
 
 @media (min-width: 640px) {
   :root {
     --title-size: 15rem;
     --body-text-size: 1.9rem;
-  }
-}
-
-@media (min-width: 768px) {
-  :root {
-    --title-size: 20.8rem;
-    --body-text-size: 2.4rem;
   }
 }
 
@@ -43,6 +44,8 @@
 
     --color-primary-transparent: #ffffff3a;
     --color-primary-transparent-light: #141414e7;
+
+    --linear-gradient: linear-gradient(180deg, rgba(41, 41, 41, 0.7), rgba(75, 74, 74, 0.7) 100%);
   }
 }
 
@@ -56,11 +59,13 @@
   html {
     scroll-behavior: smooth;
     overscroll-behavior: none;
+    min-height: 100vh;
   }
 
   body {
     /* color: var(--color-text); */
-    background: var(--background-color);
+    /* background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),; */
+    background: var(--linear-gradient);
     font-size: clamp(1.4rem, 1.6vw, 1.6rem);
   }
 }
@@ -73,13 +78,15 @@
   @layer utilities {
     .page {
       width: 100vw;
-      min-height: 95vh;
+      min-height: 90vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       margin: 0 auto 0 auto;
-      background: var(--background-color);
+      overflow-y: auto;
+   
+       background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/backgrounds/hero.webp") no-repeat center / cover;
     }
   }
 
@@ -112,19 +119,17 @@
 }
 
 .turn-text {
-  position: relative; 
-    animation: turn 2ms linear 0 2 forwards;
+  position: relative;
+  animation: turn 2ms linear 0 2 forwards;
 }
 
 .text-container {
   overflow: hidden;
   width: fit-content;
   height: fit-content;
-  line-height: inherit; 
+  line-height: inherit;
   /* transform: translate3d(0, 0%, 0);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); */
-
-
 }
 
 @keyframes turn {

@@ -23,7 +23,7 @@ const Work = ({ title, list }: WorkProps) => {
     >
       <div className="details">
         <h3>{ item.title }</h3>
-        <a href={item.link}>Visit Site</a>
+        <a href={item.link} target="_blank" rel="noopener noreferrer">Visit Site</a>
       </div>
     </li>
   ))

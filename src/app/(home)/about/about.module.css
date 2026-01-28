@@ -1,8 +1,8 @@
-.main{
-    margin-top: 20rem;
+.main {
+  margin-top: 20rem;
 }
- 
- .header h2{
-    font-size:clamp(4rem, 6vw, 6rem);
-    color: var(  --color-primary-transparent);
-  }
+
+.header h2 {
+  font-size: clamp(4rem, 6vw, 6rem);
+  color: var(--color-primary-transparent);
+}

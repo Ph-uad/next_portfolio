@@ -1,11 +1,10 @@
 import Experience from "./_components/experience";
 
-
-
 export const metadata = {
   title: "Experience",
+  description:
+    "Explore Phuad's professional journey, showcasing roles, skills, and contributions in software engineering and digital transformation.",
 };
-
 
 const ExperiencePage = () => {
   return (
@@ -17,4 +16,3 @@ const ExperiencePage = () => {
 
 export default ExperiencePage;
  
-// Add more experience entries as needed

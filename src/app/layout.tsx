@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Phuad's Portfolio",
     description:
       "Discover the works of a web developer focused on delivering efficient, well‑designed websites.",
-    url: "",
+    url: "https://your-domain.com", // Replace with actual domain
     siteName: "Phuad's Portfolio",
     images: [
       {

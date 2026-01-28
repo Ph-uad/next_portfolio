@@ -11,7 +11,7 @@ const Process = () => {
                 </h2>
                 <ul className={classes['process']}>
                     <li className={classes['process__list']} data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                        <h2 className="heading-secondary color-gray">01</h2>
+                        <span className="heading-secondary color-gray" aria-hidden="true">01</span>
                         <div className="">
                             <h3 className="heading-tertiary text-right process-title">Brief</h3>
                             <p className=" width-min paragraph right">
@@ -24,7 +24,7 @@ const Process = () => {
                         <div className="">
                             <h3 className="heading-tertiary text-right process-title">Research</h3>
                             <p className=" width-min paragraph right">
-                                The project mostly have a range of existing competition and ideas. Try to understand the audience requirement
+                                The project mostly has a range of existing competition and ideas. Try to understand the audience requirement
                                 and expectations.
                             </p>
                         </div>
@@ -34,7 +34,7 @@ const Process = () => {
                         <div className="">
                             <h3 className="heading-tertiary text-right process-title">Visualization</h3>
                             <p className=" width-min paragraph right">
-                                I sometimes use design tools like figma to tryout my designs or prototype. I also let myself get inspired with the work of other beautiful design works.
+                                I sometimes use design tools like Figma to try out my designs or prototype. I also let myself get inspired with the work of other beautiful design works.
                             </p>
                         </div>
                     </li>

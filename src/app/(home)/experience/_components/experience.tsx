@@ -1,42 +1,39 @@
 "use client";
 
-import React, { useRef, useState } from "react";
-import { CompanyTitle } from "./company_title";
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { usePageTransition } from "@/src/app/_providers/usePageTransition";
+import { useGSAP } from "@gsap/react";
+import React, { useRef, useState } from "react"; 
+import { ScrollTrigger } from "gsap/ScrollTrigger"; 
+import { Title } from "@/src/app/_components/UI/title";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Experience: React.FC = () => {
+  const cont = useRef<HTMLDivElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const onClick = (index: number) => {
-    setActiveIndex(index);
-  };
-  const container = useRef<HTMLDivElement | null>(null);
-  const { isExiting, pathname } = usePageTransition((state: any) => state);
+  const onClick = (index: number) =>  setActiveIndex(index);
 
-  useGSAP(() => {
-    if (isExiting) {
-      gsap.to(container.current, {
-        x: "150vw",
-        scale: 1.4,
-        opacity: 1.6,
-        duration: 2,
-        delay : 0.5,
-        ease: "back.out(0.7)",
-      });
-    } else {
-      gsap.from(container.current, {
-        x: "-100vw",
-        scale: 0.8,
-        opacity: 0.5,
-        duration: 1.5,
-        ease: "back.out(1.7)",
-      });
-    }
-  }, [isExiting]);
+  // const { isExiting } = usePageTransition((state: any) => state);
+
+  // useGSAP(() => {
+  //   if (isExiting) {
+  //     gsap.to(container.current, {
+  //       x: "110vw",
+  //       scale: 1.4,
+  //       opacity: 0.4,
+  //       duration: 1,
+  //       ease: "back.in(1.7)",
+  //     });
+  //   } else {
+  //     gsap.from(container.current, {
+  //       x: "-100vw",
+  //       scale: 0.8,
+  //       opacity: 0.5,
+  //       duration: 1.5,
+  //       ease: "back.out(1.7)",
+  //     });
+  //   }
+  // }, [isExiting]);
 
   useGSAP(
     () => {
@@ -45,8 +42,6 @@ const Experience: React.FC = () => {
         scale: 0.7,
         opacity: 0.5,
         transformOrigin: "left center",
-        duration: 1,
-        ease: "power2.out",
       });
 
       gsap.to(`.company-name:nth-child(${activeIndex + 1})`, {
@@ -63,8 +58,8 @@ const Experience: React.FC = () => {
         ease: "power2.out",
       });
 
-      gsap.to("#companies", {
-        y: -(activeIndex * 125),
+      gsap.to("#companies", { 
+        y: -(activeIndex * 120),
         duration: 1,
         ease: "power2.out",
       });
@@ -82,23 +77,24 @@ const Experience: React.FC = () => {
         }
       );
     },
-    { scope: container, dependencies: [activeIndex] }
+    { scope: cont, dependencies: [activeIndex] }
   );
 
   return (
-    <section ref={container} className="py-2 w-4/5 mx-auto flex md:flex-row">
+    <section ref={cont} className="py-2 w-4/5 mx-auto flex flex-col overflow-hidden md:overflow-visible lg:flex-row">
       <div className=" flex-1 w-full h-1/2 ">
         <aside className="flex h-full w-full justify-center items-center gap-10">
-          <div className="animation-begin flex items-start w-full">
+          <div className="animation-begin flex flex-col md:flex-row items-start w-full">
+
             <div className="justify-center flex-[0.4] py-6 text-right gap-4 items-center">
-              <div className="flex flex-row justify-end gap-4 px-5 h-fit items-center">
-                <h3 className="text-title leading-[1.1] uppercase">Phuad</h3>
+              <div className="flex flex-row justify-end gap-4 px-5 h-fit items-center translate-y-8">
+                <h3 className="text-6xl leading-[1.1] uppercase">Phuad</h3>
                 <h3 className="">&</h3>
               </div>
             </div>
 
-            <div id="companies" className="flex flex-1 ">
-              <ul className="flex flex-col gap-2">
+            <div id="companies" className="flex flex-1">
+              <ul className="flex md:flex-col gap-2">
                 {Object.keys(experienceData).map((index: any) => {
                   return (
                     <li
@@ -106,7 +102,7 @@ const Experience: React.FC = () => {
                       className="company-name cursor-pointer"
                       onClick={() => onClick(parseInt(index))}
                     >
-                      <CompanyTitle title={experienceData[index]?.company} />
+                      <Title title={experienceData[index]?.company} />
                     </li>
                   );
                 })}
