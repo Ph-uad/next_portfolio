@@ -4,8 +4,8 @@ export const metadata = {
     "Read insightful articles on software engineering and technology.",
 };
 
-const AriclesPage = () => {
+const ArticlesPage = () => {
   return <div className="page">Articles Page</div>;
 };
 
-export default AriclesPage;
+export default ArticlesPage;

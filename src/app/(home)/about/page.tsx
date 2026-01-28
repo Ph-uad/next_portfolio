@@ -1,6 +1,7 @@
 import { Rubik_Moonrocks } from "next/font/google";
 import About from "./_components/about";
-import { desc } from "framer-motion/client";
+import { Rubik_Moonrocks } from "next/font/google";
+import About from "./_components/about";
 
 const rubik = Rubik_Moonrocks({ weight: "400", subsets: ["latin"] });
 
@@ -17,7 +18,7 @@ const AboutPage = () => {
         className={`${rubik.className} top-24 left-0 fixed w-full text-left text-[--color-primary-transparent] text-3xl`}
       >
         <h1>Novum Testamentum</h1>
-        <h1>Romani ٢١</h1>
+        <h2>Romani ٢١</h2>
         <h2> ١-٨</h2>
       </header>
       <About />

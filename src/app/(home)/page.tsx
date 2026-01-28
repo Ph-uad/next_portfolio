@@ -2,22 +2,23 @@
 
 import gsap from "gsap";
 import React, { useRef } from "react";
-import { useGSAP } from "@gsap/react";
+import { useGSAP } from "@gsap/react"; 
 import LinkLabel from "../_components/layouts/navigation/Link-label";
 import { useHandleNavigation } from "@/src/app/_hooks/useHandleNavigation";
 
 const HomePage: React.FC = () => {
   const home_container = useRef<HTMLDivElement | null>(null);
-  const handleNavigation = useHandleNavigation();
+
   useGSAP(
     () => {
+      gsap.set(home_container.current, { y: 50, opacity: 0 });
       gsap.to(home_container.current, {
         y: 0,
         opacity: 1,
         duration: 1,
         ease: "back.in(0.7)",
       });
-      const targets = gsap.utils.toArray(["h1", "p", "h4", "a"]);
+      const targets = gsap.utils.toArray("h1, p, h4, a");
       gsap.fromTo(
         targets,
         { y: 50, opacity: 0 },

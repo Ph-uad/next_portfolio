@@ -15,7 +15,7 @@
 
   --color-text: #101010;
   --body-text-size: 1.4rem;
-  --title-text-size: 40.8rem;
+  --title-text-size: 7.8rem;
   --background-color: #e0eae9;
   --linear-gradient: linear-gradient(135deg,rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%);
 
@@ -23,17 +23,20 @@
   --color-primary-transparent-light: #ededede7;
 }
 
-@media (max-width: 768px) {
+/* Mobile styles (default in :root) */
+/* Tablet and up */
+@media (min-width: 640px) {
   :root {
-    --title-text-size: 7.8rem;
-    --body-text-size: 2.4rem;
+    --title-text-size: 15rem;
+    --body-text-size: 1.9rem;
   }
 }
 
-@media (min-width: 640px) {
+/* Desktop and up */
+@media (min-width: 768px) {
   :root {
-    --title-size: 15rem;
-    --body-text-size: 1.9rem;
+    --title-text-size: 7.8rem;
+    --body-text-size: 2.4rem;
   }
 }
 
@@ -85,7 +88,7 @@
       align-items: center;
       margin: 0 auto 0 auto;
       overflow-y: auto;
-   
+
        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/backgrounds/hero.webp") no-repeat center / cover;
     }
   }
@@ -96,17 +99,6 @@
     line-height: 2.4;
   }
 }
-/* 
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-} */
 
 .turn-text-container {
   position: relative;
@@ -120,16 +112,14 @@
 
 .turn-text {
   position: relative;
-  animation: turn 2ms linear 0 2 forwards;
+  animation: turn 200ms linear 0s 2 forwards;
 }
 
 .text-container {
   overflow: hidden;
   width: fit-content;
   height: fit-content;
-  line-height: inherit;
-  /* transform: translate3d(0, 0%, 0);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); */
+  line-height: inherit; 
 }
 
 @keyframes turn {
