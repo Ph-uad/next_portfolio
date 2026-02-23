@@ -1,11 +1,16 @@
 
 
 import * as React from "react";
-import { Inter } from "next/font/google";
+import { Inter, Google_Sans_Flex } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
 
 const inter = Inter({
+  weight: ["700", "600", "400", "300"],
+  subsets: ["latin"],
+});
+
+const googleSans = Google_Sans_Flex({
   weight: ["700", "600", "400", "300"],
   subsets: ["latin"],
 });
@@ -57,7 +62,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`} suppressHydrationWarning>
+      <body className={`${googleSans.className}`} suppressHydrationWarning>
         {children}
       </body>
     </html>

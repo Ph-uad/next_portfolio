@@ -9,7 +9,7 @@ const LinkLabel: React.FC<{
   handleNavigation: (path: string) => void;
 }> = ({ img, label, route, handleNavigation }) => {
   return (
-    <button onClick={() => handleNavigation(`${route.toLowerCase()}`)}>
+    <div onClick={() => handleNavigation(`${route.toLowerCase()}`)}>
       {img && (
         <figure className="h-10 w-10 ">
           <Image
@@ -21,12 +21,8 @@ const LinkLabel: React.FC<{
           />
         </figure>
       )}
-      {!img && (
-        <span className="cursor-pointer transition-all duration-300 ease-in-out hover:underline hover:underline-offset-4">
-          {label}
-        </span>
-      )}
-    </button>
+      {!img && <>{label}</>}
+    </div>
   );
 };
 

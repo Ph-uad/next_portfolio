@@ -7,128 +7,33 @@
 :root {
   line-height: 1.7;
   word-spacing: 1.4px;
-  color-scheme: light dark;
-  font-size: clamp(35%, 62.5%, 80%);
+  color-scheme: light;
+  /* font-size: clamp(35%, 62.5%, 80%); */
   font-family:
     -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 
-  --color-text: #101010;
+
+  --color-white : #F2F6FC;
+  --color-text: #0B1215;
   --body-text-size: 1.4rem;
   --title-text-size: 7.8rem;
-  --background-color: #e0eae9;
+
   --linear-gradient: linear-gradient(135deg,rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%);
 
   --color-primary-transparent: #15161061;
   --color-primary-transparent-light: #ededede7;
 }
 
-/* Mobile styles (default in :root) */
-/* Tablet and up */
-@media (min-width: 640px) {
-  :root {
-    --title-text-size: 15rem;
-    --body-text-size: 1.9rem;
-  }
+h1,h2,h3,h4{
+  line-height: 1.2;
+}
+p, span{
+  line-height: 1.4;
+  
 }
 
-/* Desktop and up */
-@media (min-width: 768px) {
-  :root {
-    --title-text-size: 7.8rem;
-    --body-text-size: 2.4rem;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: #141414;
-    --color-text: var(--accent-color-1, #efefef);
-
-    --color-primary-transparent: #ffffff3a;
-    --color-primary-transparent-light: #141414e7;
-
-    --linear-gradient: linear-gradient(180deg, rgba(41, 41, 41, 0.7), rgba(75, 74, 74, 0.7) 100%);
-  }
-}
-
-@layer base {
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scrollbar-width: none;
-  }
-  html {
-    scroll-behavior: smooth;
-    overscroll-behavior: none;
-    min-height: 100vh;
-  }
-
-  body {
-    /* color: var(--color-text); */
-    /* background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),; */
-    background: var(--linear-gradient);
-    font-size: clamp(1.4rem, 1.6vw, 1.6rem);
-  }
-}
-
-@layer components {
-  .container {
-    margin: auto;
-  }
-
-  @layer utilities {
-    .page {
-      width: 100vw;
-      min-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin: 0 auto 0 auto;
-      overflow-y: auto;
-
-       background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/backgrounds/hero.webp") no-repeat center / cover;
-    }
-  }
-
-  h1,
-  h2,
-  h3 {
-    line-height: 2.4;
-  }
-}
-
-.turn-text-container {
-  position: relative;
-  overflow: hidden;
-  display: block;
-  unicode-bidi: isolate;
-  margin-left: -1px;
-  margin-right: -1px;
-  width: fit-content;
-}
-
-.turn-text {
-  position: relative;
-  animation: turn 200ms linear 0s 2 forwards;
-}
-
-.text-container {
-  overflow: hidden;
-  width: fit-content;
-  height: fit-content;
-  line-height: inherit; 
-}
-
-@keyframes turn {
-  100% {
-    transform: translate3d(0, 0%, 0);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  }
-  0% {
-    transform: translate3d(0, 100%, 0);
-    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-  }
+body{
+  background: var(--color-white);
+  color: var(--color-text);
 }

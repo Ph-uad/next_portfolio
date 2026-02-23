@@ -1,4 +1,4 @@
-import { Bridge, Committee, DigitalTransformation, Roles } from "../../../public/index";
+import { Bridge, Committee, DigitalTransformation, Roles } from "../../public/index";
 
 const blogs = [
     {

@@ -4,13 +4,14 @@ import { usePathname, useRouter } from "next/navigation";
 import { usePageTransition } from "@/src/app/_providers/usePageTransition";
 import { useRef, useEffect, useCallback } from "react";
 
-export const useHandleNavigation = () => {
+export const useHandleNavigation = () => { 
+  // return null 
   const router = useRouter();
   const pathname = usePathname();
 
-  const setIsExiting = usePageTransition((s) => s.setIsExiting);
-  const isExiting = usePageTransition((s) => s.isExiting);
-  const setNewPathname = usePageTransition((s) => s.setNewPathname);
+  const setIsExiting = usePageTransition((s : any) => s.setIsExiting);
+  const isExiting = usePageTransition((s : any) => s.isExiting);
+  const setNewPathname = usePageTransition((s : any) => s.setNewPathname);
 
   const navigationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 

@@ -7,37 +7,50 @@ import React, { useEffect } from "react";
 
 const Transition: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   const container = React.useRef<HTMLDivElement | null>(null);
-  const { isExiting } = usePageTransition((state: any) => state);
+  // const { isExiting } = usePageTransition((state: any) => state);
 
-  useGSAP(
-    () => {
-      if (isExiting) {
-        gsap.to(container.current, {
-          // y: "-100vw",
-          scale: 0.4,
-          opacity: 0.1,
-          filter: "grayscale(100%) blur(10px)",
-          duration: 1.5,
-          ease: "back.in(2)",
-        });
-      } else {
-        gsap.to(container.current, {
-          // y: "0",
-          scale: 0.9, 
-          opacity: 1,
-          filter: "grayscale(0%) blur(0px)",
-          duration: 1.5,
-          delay: 0.2,
-          ease: "back.out(2)",
-        });
-      }
-    },
-    { scope: container, dependencies: [isExiting] },
-  );
+  // useGSAP(
+  //   () => {
+  //     const targets = gsap.utils.toArray("h1, p, h4, a");
+  //     if (isExiting) {
+  //       gsap.fromTo(
+  //         "html",
+  //         { background: "linear-gradient(265deg, #e3e2e280, #a2a2a280)" },
+  //         {
+  //           background: "linear-gradient(5deg, #e3e2e280, #a2a2a280)", 
+  //           duration: 1,
+  //           delay: 0.1,
+  //           ease: "back.out",
+  //         },
+  //       );
+  //     } else {
+  //       gsap.fromTo(
+  //         targets,
+  //         { background: "linear-gradient(5deg, #e3e2e280, #a2a2a280)" },
+  //         {
+  //          background: "linear-gradient(265deg, #e3e2e280, #a2a2a280)",
+  //           duration: 1,
+  //           delay: 0.1,
+  //           ease: "back.out",
+  //         },
+  //       );
+  //       // gsap.to(container.current, {
+  //       //   // y: "0",
+  //       //   scale: 0.9,
+  //       //   opacity: 1,
+  //       //   filter: "grayscale(0%) blur(0px)",
+  //       //   duration: 1.5,
+  //       //   delay: 0.2,
+  //       //   ease: "back.out(2)",
+  //       // });
+  //     }
+  //   },
+  //   { dependencies: [isExiting] },
+  // );
 
-  useEffect(() => {
-    gsap.set(container.current, { x: "0", opacity: 1, scale: 1 });
-  }, []);
+  // useEffect(() => {
+  //   gsap.set(container.current, { x: "0", opacity: 1, scale: 1 });
+  // }, []);
 
   return (
     <div ref={container} className="page">

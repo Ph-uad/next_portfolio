@@ -1,6 +1,4 @@
-import { Rubik_Moonrocks } from "next/font/google";
-import About from "./_components/about";
-import { Rubik_Moonrocks } from "next/font/google";
+import { Rubik_Moonrocks } from "next/font/google";  
 import About from "./_components/about";
 
 const rubik = Rubik_Moonrocks({ weight: "400", subsets: ["latin"] });

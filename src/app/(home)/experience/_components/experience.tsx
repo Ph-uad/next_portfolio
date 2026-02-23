@@ -51,26 +51,26 @@ const Experience: React.FC = () => {
         ease: "power2.out",
       });
 
-      gsap.to(".turn-text-container", {
-        height: "fit-content",
-        stagger: 0.2,
-        duration: 1.5,
-        ease: "power2.out",
-      });
+      // gsap.to(".turn-text-container", {
+      //   height: "fit-content",
+      //   stagger: 0.2,
+      //   duration: 1.5,
+      //   ease: "power2.out",
+      // });
 
       gsap.to("#companies", { 
-        y: -(activeIndex * 120),
+        y: -(activeIndex * 190),
         duration: 1,
         ease: "power2.out",
       });
 
       gsap.fromTo(
-        ".turn-text",
+        ".text",
         {
-          transform: "translate3d(0, 100%, 0)",
+          transform: "rotateX(175deg)",
         },
         {
-          transform: "translate3d(0, 0%, 0)",
+          transform: "rotateX(0deg)",
           stagger: 0.2,
           duration: 1.5,
           ease: "sine",
@@ -120,10 +120,10 @@ const Experience: React.FC = () => {
             </strong>
           </figure>
           <div className="turn-text-container">
-            <p className="turn-text">{experienceData[activeIndex]?.timeline}</p>
+            <p className="text">{experienceData[activeIndex]?.timeline}</p>
           </div>
           <div className="turn-text-container">
-            <p className="turn-text">
+            <p className="text">
               {experienceData[activeIndex]?.description}
             </p>
           </div>
@@ -136,7 +136,7 @@ const Experience: React.FC = () => {
             {experienceData[activeIndex]?.skills.map((skill, idx) => (
               <li key={idx} className="list-item-container">
                 <div className="list-item turn-text-container">
-                  <p className="turn-text skills">{skill}</p>
+                  <p className="text skills">{skill}</p>
                 </div>
               </li>
             ))}

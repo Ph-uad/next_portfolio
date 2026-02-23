@@ -5,8 +5,7 @@ import Article from "./Article";
 import { usePageTransition } from "@/src/app/_providers/usePageTransition";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { metadata } from "../page";
+import gsap from "gsap"; 
 
 
 
