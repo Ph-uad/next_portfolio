@@ -1,7 +1,7 @@
 
 
 import * as React from "react";
-import { Inter, Google_Sans_Flex } from "next/font/google";
+import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -10,10 +10,10 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const googleSans = Google_Sans_Flex({
-  weight: ["700", "600", "400", "300"],
-  subsets: ["latin"],
-});
+// const googleSans = Google_Sans_Flex({
+//   weight: ["700", "600", "400", "300"],
+//   subsets: ["latin"],
+// });
 
 export const metadata: Metadata = {
   title: {
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Phuad's Portfolio",
     description:
       "Discover the works of a web developer focused on delivering efficient, well‑designed websites.",
-    url: "https://your-domain.com", // Replace with actual domain
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://your-domain.com",
     siteName: "Phuad's Portfolio",
     images: [
       {
@@ -62,7 +62,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${googleSans.className}`} suppressHydrationWarning>
+      <body className={`${inter.className}`} suppressHydrationWarning>
         {children}
       </body>
     </html>

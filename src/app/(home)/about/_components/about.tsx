@@ -47,7 +47,6 @@ const About: React.FC = () => {
     <main
       ref={container}
       className="page self-start justify-start"
-      style={{ justifyContent: "start !important" }}
     >
       <div className="w-3/5 mx-auto h-full relative y-0">
         <Article data={DomData.bio} />

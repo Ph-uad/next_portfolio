@@ -20,7 +20,7 @@ const Process = () => {
                         </div>
                     </li>
                     <li className={classes['process__list']} data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                        <h2 className="heading-secondary color-gray ">02</h2>
+                        <span className="heading-secondary color-gray " aria-hidden="true">02</span>
                         <div className="">
                             <h3 className="heading-tertiary text-right process-title">Research</h3>
                             <p className=" width-min paragraph right">
@@ -30,7 +30,7 @@ const Process = () => {
                         </div>
                     </li>
                     <li className={classes['process__list']} data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                        <h2 className="heading-secondary color-gray  ">03</h2>
+                        <span className="heading-secondary color-gray  " aria-hidden="true">03</span>
                         <div className="">
                             <h3 className="heading-tertiary text-right process-title">Visualization</h3>
                             <p className=" width-min paragraph right">
@@ -39,7 +39,7 @@ const Process = () => {
                         </div>
                     </li>
                     <li className={classes['process__list']} data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                        <h2 className="heading-secondary color-gray ">04</h2>
+                        <span className="heading-secondary color-gray " aria-hidden="true">04</span>
                         <div className="">
                             <h3 className="heading-tertiary text-right process-title">Development</h3>
                             <p className=" width-min paragraph right">
@@ -48,7 +48,7 @@ const Process = () => {
                         </div>
                     </li>
                     <li className={classes['process__list']} data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                        <h2 className="heading-secondary color-gray ">05</h2>
+                        <span className="heading-secondary color-gray " aria-hidden="true">05</span>
                         <div className="">
                             <h3 className="heading-tertiary text-right process-title">Conclude or repeat</h3>
                             <p className=" width-min paragraph right">

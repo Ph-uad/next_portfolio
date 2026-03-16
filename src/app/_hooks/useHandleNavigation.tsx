@@ -25,10 +25,13 @@ export const useHandleNavigation = () => {
 
       setIsExiting(true);
 
-      navigationTimeoutRef.current = setTimeout(() => {
+      navigationTimeoutRef.current = setTimeout(async () => {
         setNewPathname(path);
-        router.push(path);
-        setIsExiting(false);
+        try {
+          await router.push(path);
+        } finally {
+          setIsExiting(false);
+        }
       }, 500);
     },
     [isExiting, pathname, setIsExiting, setNewPathname, router],
@@ -36,9 +39,11 @@ export const useHandleNavigation = () => {
 
   useEffect(() => {
     return () => {
+      // Clear pending navigation and reset exiting flag on unmount
       if (navigationTimeoutRef.current) {
         clearTimeout(navigationTimeoutRef.current);
       }
+      setIsExiting(false);
     };
   }, []);
 
