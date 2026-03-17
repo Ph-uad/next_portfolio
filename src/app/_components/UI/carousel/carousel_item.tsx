@@ -22,5 +22,6 @@ const CarouselItem = ({
       </h2>
     </li>
   );
+}
 
 export default CarouselItem;
