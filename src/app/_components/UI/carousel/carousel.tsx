@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { useRef, useState } from "react";
 import CarouselItem from "./carousel_item";
 import { useGSAP } from "@gsap/react";
+// import Mage from '@/public/backgrounds/bg-texture2.webp'
 
 const Carousel = () => {
   const container = useRef<HTMLDivElement | null>(null);
@@ -14,10 +15,11 @@ const Carousel = () => {
 
   const handleClick = (args: Partial<typeof carouselState>) => {
     if (args.activeIndex !== undefined) {
-      if (args.activeIndex < 0) {
+      if (args.activeIndex <= 0) {
         args.activeIndex = 0;
-      } else if (args.activeIndex > 2) {
-        args.activeIndex = 2;
+      } 
+      else if (args.activeIndex >= 4) {
+        args.activeIndex = 4;
       }
     }
     setCarouselState((prev) => ({ ...prev, ...args }));
@@ -25,7 +27,6 @@ const Carousel = () => {
 
   useGSAP(
     () => {
-      console.log("Direction:", carouselState);
       gsap.to("#carousel", {
         x: -carouselState.activeIndex * 100 + "vw",
         duration: 1,
@@ -41,8 +42,11 @@ const Carousel = () => {
       className="w-full h-full bg-gray-200 relative overflow-hidden"
     >
       <ul className="flex h-full" id="carousel">
-        <CarouselItem classname="bg-purple-500 flex items-center justify-center text-white text-xl font-bold">
-          Slide 1
+        <CarouselItem classname="bg-coming-soon bg-top bg-cover bg-no-repeat">
+          Slide - 1
+        </CarouselItem>
+        <CarouselItem classname="bg-coming-soon2 bg-top bg-cover bg-no-repeat">
+          Slide 0
         </CarouselItem>
 
         <li className="flex-shrink-0 w-screen h-full bg-red-500  flex items-center justify-center text-white text-xl font-bold">
@@ -54,6 +58,9 @@ const Carousel = () => {
         <li className="flex-shrink-0 w-screen h-full bg-blue-500 rounded-l4 flex items-center justify-center text-white text-xl font-bold">
           Slide 3
         </li>
+        <li className="flex-shrink-0 w-screen h-full bg-blue-500 rounded-l4 flex items-center justify-center text-white text-xl font-bold">
+          Slide 4
+        </li>
       </ul>
       {carouselState.activeIndex > 0 && (
         <button
@@ -63,10 +70,10 @@ const Carousel = () => {
               activeIndex: carouselState.activeIndex - 1,
             })
           }
-          className="absolute h-full w-1/2 inset-0 cursor-default bg-green-400/20"
+          className="absolute h-full w-1/2 inset-0 cursor-default bg-green-400/0"
         ></button>
       )}
-      {carouselState.activeIndex < 2 && (
+      {carouselState.activeIndex < 5 && (
         <button
           onClick={() =>
             handleClick({
@@ -74,7 +81,7 @@ const Carousel = () => {
               activeIndex: carouselState.activeIndex + 1,
             })
           }
-          className="absolute h-full w-1/2 inset-0 cursor-default bg-blue-400/20 ml-auto"
+          className="absolute h-full w-1/2 inset-0 cursor-default bg-blue-400/0 ml-auto"
         ></button>
       )}
     </div>

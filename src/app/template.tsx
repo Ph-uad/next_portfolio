@@ -7,7 +7,7 @@ import Transition from "./_components/layouts/transition/transition";
 
 export default function Template({ children }: { children?: React.ReactNode }) {
   return (
-    <div className="h-screen w-screen flex flex-col justify-between">
+    <div className="h-screen w-screen flex flex-col justify-between relative">
       <MainNavigation />
       <Transition>{children}</Transition>
       <Footer />

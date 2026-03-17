@@ -1,12 +1,10 @@
 "use client";
 
-import Link from "next/link";
-
-// import FooterBg from '@/public/images/footer-bg.jpg';
+import Link from "next/link"; 
 
 const Footer = () => {
   return (
-    <footer className="w-fit self-end py-2 px-10 flex flex-col md:flex-row gap-6 md:gap-32 text-right text-sm">
+    <footer className="absolute bottom-1 w-fit self-end py-2 px-10 flex flex-col md:flex-row gap-6 md:gap-32 text-right text-sm text-white">
       <div className="flex-grow-0 w-96">
         <h4 className="uppercase">Recently,</h4>
         <p>

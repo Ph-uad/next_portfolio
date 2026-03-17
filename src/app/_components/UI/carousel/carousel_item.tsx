@@ -16,8 +16,8 @@ const CarouselItem = ({
 }) => {
 
   return (
-    <li className="w-full h-full flex-shrink-0">
-      <h2 className={` w-screen h-full absolute  z-1000 ${classname || ""}`}>
+    <li className={`${"w-full h-full flex-shrink-0 flex items-center justify-center text-white text-xl font-bold"} ${classname}`}>
+      <h2 className={''}>
         {children}
       </h2>
     </li>

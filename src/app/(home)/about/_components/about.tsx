@@ -12,19 +12,7 @@ import gsap from "gsap";
 const About: React.FC = () => {
   const container = useRef<HTMLDivElement | null>(null);
   const { isExiting } = usePageTransition((state: any) => state);
-
-  // useGSAP(() => {
-  //   if (isExiting) {
-  //     gsap.to(container.current, {
-  //       y: "-100vh",
-  //       scale: 1,
-  //       opacity: 0.4,
-  //       duration: 1,
-  //       ease: "back.in(1.7)",
-  //     });
-  //   }
-  // }, [isExiting]);
-
+ 
   useGSAP(
     () => {
       const targets = gsap.utils.toArray(["header", "h1", "p", "h4", "a"]);
@@ -46,9 +34,9 @@ const About: React.FC = () => {
   return (
     <main
       ref={container}
-      className="page self-start justify-start"
+      className="page self-start justify-start py-20"
     >
-      <div className="w-3/5 mx-auto h-full relative y-0">
+      <div className="w-3/5 mx-auto h-full relative y-10">
         <Article data={DomData.bio} />
         <Article data={DomData.insight} />
       </div>

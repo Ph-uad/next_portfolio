@@ -1,16 +1,18 @@
 export const DomData = {
   bio: {
     id: "01",
-    title: "bio",
+    title: "",
     message: [
-      "I am a web developer, on the path to hone the skill of web development by testing relative concepts used by the industry to build web interfaces that deliver clear and intended messages with appealing designs.",
-      "I am focused on web performance and design concepts. I love learning new concepts that bring optimization to digital experiences—solving problems efficiently and beautifully.",
+      `As a professional, I see a blank canvas at the begining of a project, it has always been art. I remember the first time I came across the concept of computer program. I think I saw the world for the first time, I never realised the 
+      process of presenting a dynamic idea as someone who had grown up with computers. It must have been like Moses infront of a burning bush.`,
+      `And of course remembring is not as it was.`,
     ],
   },
   insight: {
     id: "02",
-    title: "insight",
+    title: "Background",
     message: [
+      `I started a diploma course at aptech in 2016 (while waiting to be of age to join the miltary), I was introduced to web development and all other programming languages `,
       "Fiction to me is a source of inspiration, like thoughts and dreams; fictional works let us see someone else's thoughts or dreams in the same way.",
     ],
   },

@@ -37,5 +37,5 @@ p, span{
 
 body{
   background: var(--color-white);
-  color: var(--color-text);
+  color: var(--color-text); 
 }
