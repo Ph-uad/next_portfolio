@@ -16,12 +16,11 @@ const CarouselItem = ({
 }) => {
 
   return (
-    <li className={`${"w-full h-full flex-shrink-0 flex items-center justify-center text-white text-xl font-bold"} ${classname}`}>
-      <h2 className={''}>
+    <li className={`w-full h-full flex-shrink-0 flex items-center justify-center text-white text-xl font-bold ${classname ?? ''}`}>
+      <h2>
         {children}
       </h2>
     </li>
   );
-};
 
 export default CarouselItem;

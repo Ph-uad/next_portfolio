@@ -36,7 +36,7 @@ const About: React.FC = () => {
       ref={container}
       className="page self-start justify-start py-20"
     >
-      <div className="w-3/5 mx-auto h-full relative y-10">
+      <div className="w-3/5 mx-auto h-full relative top-10">
         <Article data={DomData.bio} />
         <Article data={DomData.insight} />
       </div>
