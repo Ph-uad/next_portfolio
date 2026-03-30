@@ -1,10 +1,9 @@
 "use client";
 
 import gsap from "gsap";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CarouselItem from "./carousel_item";
 import { useGSAP } from "@gsap/react";
-// import Mage from '@/public/backgrounds/bg-texture2.webp'
 
 const Carousel = () => {
   const container = useRef<HTMLDivElement | null>(null);
@@ -13,12 +12,32 @@ const Carousel = () => {
     activeIndex: 0,
   });
 
+  // Keyboard compability scrolls the carousel left and right with arrow keys
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft" || e.key === "ArrowDown") {
+        handleClick({
+          direction: -1,
+          activeIndex: carouselState.activeIndex - 1,
+        });
+      } else if (e.key === "ArrowRight" || e.key === "ArrowUp") {
+        handleClick({
+          direction: 1,
+          activeIndex: carouselState.activeIndex + 1,
+        });
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [carouselState]);
+
   const handleClick = (args: Partial<typeof carouselState>) => {
     if (args.activeIndex !== undefined) {
       if (args.activeIndex <= 0) {
         args.activeIndex = 0;
-      } else if (args.activeIndex >= 4) {
-        args.activeIndex = 4;
+      } else if (args.activeIndex >= carouselData.length - 1) {
+        args.activeIndex = carouselData.length - 1;
       }
     }
     setCarouselState((prev) => ({ ...prev, ...args }));
@@ -79,17 +98,22 @@ const Carousel = () => {
       </div>
       {/* Carousel thumbnails (functional) */}
       <div className="absolute w-screen bottom-10 right-0 ">
-        <ul className="w-full h-full flex justify-end space-x-2 px-2">
+        <ul className="w-full flex justify-end space-x-2 px-2">
           {carouselData.map((item, index) => (
-            <li
-              key={item.id}
-              onClick={() => handleClick({ activeIndex: index })}
-              className={`${item.bg} bg-top bg-cover bg-no-repeat cursor-pointer  border-white/40 rounded-sm w-[5%] aspect-video flex items-center justify-center transition-all ${
-                carouselState.activeIndex === index
-                  ? "border scale-100"
-                  : "scale-90"
-              }`}
-            ></li>
+            <li key={item.id} className="list-none w-[5%] ">
+              <button
+                onClick={() => handleClick({ activeIndex: index })}
+                aria-label={`Go to slide ${index + 1}`}
+                aria-current={
+                  carouselState.activeIndex === index ? "true" : undefined
+                }
+                className={`${item.bg} bg-top bg-cover bg-no-repeat cursor-pointer border-white/40 w-full rounded-sm aspect-video flex items-center justify-center transition-all ${
+                  carouselState.activeIndex === index
+                    ? "border scale-100"
+                    : "scale-90"
+                }`}
+              ></button>
+            </li>
           ))}
         </ul>
       </div>
