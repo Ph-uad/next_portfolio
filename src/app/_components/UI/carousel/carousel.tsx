@@ -1,7 +1,7 @@
 "use client";
 
 import gsap from "gsap";
-import * as motion from "motion/react-client";
+import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import CarouselItem from "./carousel_item";
 import { useGSAP } from "@gsap/react";
@@ -77,23 +77,14 @@ const Carousel = () => {
           <AnimatePresence mode="wait">
             <div className="absolute px-[20%] w-full h-[6vh] overflow-y-hidden top-1/2 -translate-y-1/2 left-0 flex items-center justify-between pointer-events-none">
               <motion.div
-                key={
-                  carouselState
-                    ? carouselData[carouselState.activeIndex]?.id + "-left"
-                    : "empty-left"
-                }
+                key={  carouselData[carouselState.activeIndex]?.id + "-left"}
                 animate={{ rotate: carouselState.direction * 90 }}
-                transition={{ duration: 0.2 }}
-                className=""
+                transition={{ duration: 0.2 }} 
               >
                 <PlusIcon className="text-white/80 w-4 h-4" />
               </motion.div>
               <motion.div
-                key={
-                  carouselState
-                    ? carouselData[carouselState.activeIndex]?.id
-                    : "empty"
-                }
+                key={carouselData[carouselState.activeIndex]?.id}
                 initial={{ y: carouselState.direction * -10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: carouselState.direction * 10, opacity: 0 }}
@@ -101,17 +92,11 @@ const Carousel = () => {
                 className=""
               >
                 <p className="text-white text-center">
-                  {carouselState
-                    ? carouselData[carouselState.activeIndex]?.title
-                    : "Project Title"}
+                  {carouselData[carouselState.activeIndex]?.title ?? "Project Title"}
                 </p>
               </motion.div>
               <motion.button
-                key={
-                  carouselState
-                    ? carouselData[carouselState.activeIndex]?.id + "-right"
-                    : "empty-right"
-                }
+                key={carouselData[carouselState.activeIndex]?.id + "-right"}
                 animate={{ rotate: carouselState.direction * 90 }}
                 transition={{ duration: 0.2 }}
                 className=""

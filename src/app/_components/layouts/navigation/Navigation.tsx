@@ -29,7 +29,7 @@ const MainNavigation = () => {
   }, [pathname]);
 
   return (
-    <nav className="absolute top-4 left-1/2 -translate-x-1/2 z-[2000] w-fit mx-auto flex justify-center items-center overflow-x-hidden flex-wrap text-[var(--color-text-white)] ">
+    <nav className="absolute top-4 left-1/2 -translate-x-1/2 z-[2000] w-fit mx-auto flex justify-center items-center overflow-x-hidden flex-wrap text-[color:var(--color-text-white)]">
       <ul className="flex space-x-1 bg-black rounded-full overflow-hidden p-[0.5px]">
         {tabs.map((tab, index) => (
           <li
