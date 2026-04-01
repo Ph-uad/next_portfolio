@@ -88,8 +88,7 @@ const Carousel = () => {
                 initial={{ y: carouselState.direction * -10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: carouselState.direction * 10, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-                className=""
+                transition={{ duration: 0.2 }} 
               >
                 <p className="text-white text-center">
                   {carouselData[carouselState.activeIndex]?.title ?? "Project Title"}
