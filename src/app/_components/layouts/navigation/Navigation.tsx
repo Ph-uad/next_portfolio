@@ -29,7 +29,7 @@ const MainNavigation = () => {
   }, [pathname]);
 
   return (
-    <nav className="absolute top-4 left-1/2 -translate-x-1/2 z-[2000] w-fit mx-auto flex justify-center items-center overflow-x-hidden flex-wrap text-[var(--color-text-white)] text-[clamp(1.2rem,2vw,1.4rem)]">
+    <nav className="absolute top-4 left-1/2 -translate-x-1/2 z-[2000] w-fit mx-auto flex justify-center items-center overflow-x-hidden flex-wrap text-[var(--color-text-white)] ">
       <ul className="flex space-x-1 bg-black rounded-full overflow-hidden p-[0.5px]">
         {tabs.map((tab, index) => (
           <li
@@ -41,7 +41,7 @@ const MainNavigation = () => {
               handleNavigation(`/${tab.id === "work" ? "" : tab.id}`);
             }}
             className={`${activeTab === tab.id ? "" : "hover:scale-105 font-bold  "}
-             relative rounded-full px-6 py-3 text-sm font-medium uppercase text-white outline-sky-400 focus-visible:outline-2 transition-all duration-300 ease-in-out`}
+             relative rounded-full px-4 py-2 text-[0.6rem] font-medium uppercase text-white outline-sky-400 focus-visible:outline-2 transition-all duration-300 ease-in-out`}
             style={{ WebkitTapHighlightColor: "transparent" }}
           >
             {activeTab === tab.id && (

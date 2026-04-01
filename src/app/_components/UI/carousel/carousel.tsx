@@ -1,9 +1,12 @@
 "use client";
 
 import gsap from "gsap";
+import * as motion from "motion/react-client";
 import { useEffect, useRef, useState } from "react";
 import CarouselItem from "./carousel_item";
 import { useGSAP } from "@gsap/react";
+import { AnimatePresence } from "framer-motion";
+import { PlusIcon } from "lucide-react";
 
 const Carousel = () => {
   const container = useRef<HTMLDivElement | null>(null);
@@ -60,16 +63,64 @@ const Carousel = () => {
         ref={container}
         className="w-full h-full bg-gray-200 relative overflow-hidden"
       >
-        <ul className="flex h-full" id="carousel">
-          {carouselData.map((item, index) => (
-            <CarouselItem
-              key={item.id}
-              classname={`${item.bg} bg-top bg-cover bg-no-repeat`}
-            >
-              {item.title}
-            </CarouselItem>
-          ))}
-        </ul>
+        <div className="w-full h-full relative">
+          <ul className="flex h-full" id="carousel">
+            {carouselData.map((item, index) => (
+              <CarouselItem
+                key={item.id}
+                classname={`${item.bg} bg-top bg-cover bg-no-repeat`}
+              />
+            ))}
+          </ul>
+          
+          {/* Animate text and icons */}
+          <AnimatePresence mode="wait">
+            <div className="absolute px-[20%] w-full h-[6vh] overflow-y-hidden top-1/2 -translate-y-1/2 left-0 flex items-center justify-between pointer-events-none">
+              <motion.div
+                key={
+                  carouselState
+                    ? carouselData[carouselState.activeIndex]?.id + "-left"
+                    : "empty-left"
+                }
+                animate={{ rotate: carouselState.direction * 90 }}
+                transition={{ duration: 0.2 }}
+                className=""
+              >
+                <PlusIcon className="text-white/80 w-4 h-4" />
+              </motion.div>
+              <motion.div
+                key={
+                  carouselState
+                    ? carouselData[carouselState.activeIndex]?.id
+                    : "empty"
+                }
+                initial={{ y: carouselState.direction * -10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: carouselState.direction * 10, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className=""
+              >
+                <p className="text-white text-center">
+                  {carouselState
+                    ? carouselData[carouselState.activeIndex]?.title
+                    : "Project Title"}
+                </p>
+              </motion.div>
+              <motion.button
+                key={
+                  carouselState
+                    ? carouselData[carouselState.activeIndex]?.id + "-right"
+                    : "empty-right"
+                }
+                animate={{ rotate: carouselState.direction * 90 }}
+                transition={{ duration: 0.2 }}
+                className=""
+              >
+                <PlusIcon className="text-white/80 w-4 h-4" />
+              </motion.button>
+            </div>
+          </AnimatePresence>
+        </div>
         {/* Carousel navigation buttons */}
         {/* Carousel Left button */}
         {carouselState.activeIndex > 0 && (
