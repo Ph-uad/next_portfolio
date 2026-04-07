@@ -97,8 +97,7 @@ const Carousel = () => {
               <motion.button
                 key={carouselData[carouselState.activeIndex]?.id + "-right"}
                 animate={{ rotate: carouselState.direction * 90 }}
-                transition={{ duration: 0.2 }}
-                className=""
+                transition={{ duration: 0.2 }} 
               >
                 <PlusIcon className="text-white/80 w-4 h-4" />
               </motion.button>

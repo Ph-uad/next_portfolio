@@ -11,9 +11,9 @@ export const metadata = {
 
 const AboutPage = () => {
   return (
-    <div className="relative">
+    <div className="relative flex flex-col items-center justify-center h-screen">
       <header
-        className={`${rubik.className} top-24 left-0 fixed w-full text-left text-[--color-primary-transparent] text-3xl`}
+        className={`${rubik.className} top-4 left-0 fixed w-full text-left text-[--color-primary-transparent] text-base  md:text-2xl`}
       >
         <h1>Novum Testamentum</h1>
         <h2>Romani ٢١</h2>

@@ -1,9 +1,9 @@
 
 
+
 import * as React from "react";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
-import "./globals.css";
 
 const inter = Inter({
   weight: ["700", "600", "400", "300"],
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     template: "%s | Portfolio",
   },
   description:
-    "Discover the works of a web developer focused on delivering efficient, well‑designed websites.",
-  keywords: ["Phuad", "Portfolio", "Next.js", "Web Developer"],
+    "Discover the works of a digital enthusiast focused on delivering efficient, well‑designed websites.",
+  keywords: ["Phuad", "Portfolio", "Next.js", "Digital Enthusiast"],
   authors: [{ name: "Phuad" }],
   icons: {
     icon: "/favIcon.png",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Phuad's Portfolio",
     description:
-      "Discover the works of a web developer focused on delivering efficient, well‑designed websites.",
+      "Discover the works of a digital enthusiast focused on delivering efficient, well‑designed websites.",
     url: process.env.NEXT_PUBLIC_SITE_URL || "https://your-domain.com",
     siteName: "Phuad's Portfolio",
     images: [
@@ -45,13 +45,6 @@ export const metadata: Metadata = {
     ],
     locale: "en_US",
     type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Phuad's Portfolio",
-    description:
-      "Discover the works of a web developer focused on delivering efficient, well‑designed websites.",
-    images: ["/og-image.png"],
   },
 };
 

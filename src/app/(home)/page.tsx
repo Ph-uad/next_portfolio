@@ -6,7 +6,7 @@ import Carousel from "../_components/UI/carousel/carousel";
 const HomePage: React.FC = () => {
 
   return (
-    <main className="w-screen h-screen">
+    <main className="w-screen h-screen page" >
      
       <Carousel />
    

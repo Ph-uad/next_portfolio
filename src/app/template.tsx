@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import Footer from "./_components/layouts/footer/Footer";
+import "./globals.css"; 
 import MainNavigation from "./_components/layouts/navigation/Navigation";
 import Transition from "./_components/layouts/transition/transition";
 
