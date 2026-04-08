@@ -1,9 +1,12 @@
 "use client";
 
 import gsap from "gsap";
+import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import CarouselItem from "./carousel_item";
 import { useGSAP } from "@gsap/react";
+import { AnimatePresence } from "framer-motion";
+import { PlusIcon } from "lucide-react";
 
 const Carousel = () => {
   const container = useRef<HTMLDivElement | null>(null);
@@ -40,6 +43,7 @@ const Carousel = () => {
         args.activeIndex = carouselData.length - 1;
       }
     }
+
     setCarouselState((prev) => ({ ...prev, ...args }));
   };
 
@@ -60,40 +64,90 @@ const Carousel = () => {
         ref={container}
         className="w-full h-full bg-gray-200 relative overflow-hidden"
       >
-        <ul className="flex h-full" id="carousel">
-          {carouselData.map((item, index) => (
-            <CarouselItem
-              key={item.id}
-              classname={`${item.bg} bg-top bg-cover bg-no-repeat`}
-            >
-              {item.title}
-            </CarouselItem>
-          ))}
-        </ul>
+        <div className="w-full h-full relative">
+          <ul className="flex h-full" id="carousel">
+            {carouselData.map((item, index) => (
+              <CarouselItem
+                key={item.id}
+                classname={`${item.bg} bg-top bg-cover bg-no-repeat`}
+              />
+            ))}
+          </ul>
+
+          {/* Animate text and icons */}
+          <AnimatePresence mode="wait">
+            <div className="absolute px-[20%] w-full h-[6vh] overflow-y-hidden top-1/2 -translate-y-1/2 left-0 flex items-center justify-between pointer-events-none">
+              <motion.button
+                key={carouselData[carouselState.activeIndex]?.id + "-left"}
+                animate={{ rotate: carouselState.direction * 90 }}
+                transition={{ duration: 0.2 }}
+                className="pointer-events-auto"
+                aria-label="Next slide"
+                onClick={() =>
+                  handleClick({
+                    direction: -1,
+                    activeIndex: carouselState.activeIndex - 1,
+                  })
+                }
+              >
+                <PlusIcon className="text-white/80 w-4 h-4" />
+              </motion.button>
+              <motion.div
+                key={carouselData[carouselState.activeIndex]?.id}
+                initial={{ y: carouselState.direction * -10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: carouselState.direction * 10, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <p className="text-white text-center">
+                  {carouselData[carouselState.activeIndex]?.title ??
+                    "Project Title"}
+                </p>
+              </motion.div>
+              <motion.button
+                key={carouselData[carouselState.activeIndex]?.id + "-right"}
+                animate={{ rotate: carouselState.direction * 90 }}
+                transition={{ duration: 0.2 }}
+                className="pointer-events-auto"
+                aria-label="Next slide"
+                onClick={() =>
+                  handleClick({
+                    direction: 1,
+                    activeIndex: carouselState.activeIndex + 1,
+                  })
+                }
+              >
+                <PlusIcon className="text-white/80 w-4 h-4" />
+              </motion.button>
+            </div>
+          </AnimatePresence>
+        </div>
         {/* Carousel navigation buttons */}
         {/* Carousel Left button */}
         {carouselState.activeIndex > 0 && (
-          <button
+          <div
+            role="button"
             onClick={() =>
               handleClick({
                 direction: -1,
                 activeIndex: carouselState.activeIndex - 1,
               })
             }
-            className="absolute h-full w-1/2 inset-0 cursor-default bg-green-400/0"
-          ></button>
+            className="absolute h-full w-1/2 inset-0 cursor-default bg-green-400/0 focus-visible:outline-none"
+          ></div>
         )}
         {/* Carousel Right button */}
         {carouselState.activeIndex < carouselData.length - 1 && (
-          <button
+          <div
+            role="button"
             onClick={() =>
               handleClick({
                 direction: 1,
                 activeIndex: carouselState.activeIndex + 1,
               })
             }
-            className="absolute h-full w-1/2 inset-0 cursor-default bg-blue-400/0 ml-auto"
-          ></button>
+            className="absolute h-full w-1/2 inset-0 cursor-default bg-blue-400/0 ml-auto focus-visible:outline-none"
+          ></div>
         )}
       </div>
       {/* Carousel thumbnails (functional) */}
