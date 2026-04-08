@@ -21,7 +21,7 @@
   --linear-gradient: linear-gradient(135deg,rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) 100%);
 
   --color-primary-transparent: #15161061;
-  --color-primary-transparent-light: #ededed65
+  --color-primary-transparent-light: #ededed65;
 }
 
 h1,h2,h3,h4{

@@ -51,7 +51,7 @@ const About: React.FC = () => {
           <h1 className="text-lg">Hi, I'm Phuad,</h1>
           <p className=" leading-relaxed text-xs md:text-base text-[--color-primary-transparent-light]">
             A digital polymath (software engineering and data science) based in
-            the United Kingdom, building and inquring digital products and
+            the United Kingdom, building and inquiring digital products and
             services. Since 2021. I help bring ideas and facts to light.
           </p>
         </article>
@@ -73,10 +73,10 @@ const About: React.FC = () => {
               <ul className="flex flex-col lg:flex-row justify-between lg:items-center text-xs">
                 <li className="">2021 - 2023</li>
                 <li className="text-[var(--color-primary-transparent-light)] hidden lg:block"> | </li>
-                <h4>Software Engineer</h4>
+                <li><strong>Software Engineer</strong></li>
                 <li className="text-[var(--color-primary-transparent-light)] hidden lg:block"> | </li>
                 <li>
-                  <h3>Tizeti</h3>
+                  <strong>Tizeti</strong>
                 </li>
               </ul>
             </li>
@@ -95,7 +95,7 @@ const About: React.FC = () => {
               project, and I was consistently impressed by their technical
               expertise and problem-solving skills. They were able to navigate
               through challenges with ease and always delivered high-quality
-              work on time. [Your Name] is a true asset to any team, and I
+              work on time. Phuad is a true asset to any team, and I
               highly recommend them for any software engineering role."
             </p>
             <span className="text-xs border-b border-[var(--color-primary-transparent-light)]">
@@ -112,7 +112,7 @@ const About: React.FC = () => {
           <div className="flex flex-col gap-y-2 overflow-hidden flex-nowrap">
             <ul
               className="flex flex-nowrap justify-center items-center gap-x-4"
-              id="software-enginnering-tools"
+              id="software-engineering-tools"
             >
               <li className="p-2 border border-[var(--color-primary-transparent-light)] rounded text-xs flex-grow min-w-max text-center">
                 React

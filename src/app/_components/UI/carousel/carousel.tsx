@@ -43,7 +43,7 @@ const Carousel = () => {
         args.activeIndex = carouselData.length - 1;
       }
     }
-    
+
     setCarouselState((prev) => ({ ...prev, ...args }));
   };
 
@@ -81,6 +81,8 @@ const Carousel = () => {
                 key={carouselData[carouselState.activeIndex]?.id + "-left"}
                 animate={{ rotate: carouselState.direction * 90 }}
                 transition={{ duration: 0.2 }}
+                className="pointer-events-auto"
+                aria-label="Next slide"
                 onClick={() =>
                   handleClick({
                     direction: -1,
@@ -106,6 +108,8 @@ const Carousel = () => {
                 key={carouselData[carouselState.activeIndex]?.id + "-right"}
                 animate={{ rotate: carouselState.direction * 90 }}
                 transition={{ duration: 0.2 }}
+                className="pointer-events-auto"
+                aria-label="Next slide"
                 onClick={() =>
                   handleClick({
                     direction: 1,

@@ -50,6 +50,8 @@ export const useHandleNavigation = () => {
     };
   }, []);
 
+  const hasInitialized = useRef(false);
+
   useGSAP(
     () => {
       if (isExiting) {
@@ -60,14 +62,17 @@ export const useHandleNavigation = () => {
           duration: 0.5,
           ease: "power1.inOut",
         });
-      } else {
+      } else if (hasInitialized.current) {
         // Animate page entry
-        gsap.fromTo(
-          ".page",
-          { opacity: 0, scale: 1.05 },
-          { opacity: 1, scale: 1, duration: 0.5, ease: "power1.inOut" },
-        );
+        requestAnimationFrame(() => {
+          gsap.fromTo(
+            ".page",
+            { opacity: 0, scale: 1.05 },
+            { opacity: 1, scale: 1, duration: 0.5, ease: "power1.inOut" },
+          );
+        });
       }
+      hasInitialized.current = true;
     },
     { dependencies: [isExiting] },
   );
