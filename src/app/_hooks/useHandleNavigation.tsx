@@ -35,7 +35,7 @@ export const useHandleNavigation = () => {
         } finally {
           setIsExiting(false);
         }
-      }, 700);
+      }, 500);
     },
     [isExiting, pathname, setIsExiting, setNewPathname, router],
   );
