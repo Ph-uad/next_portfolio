@@ -8,5 +8,5 @@ This is a Portfolio project built with Next.js [TS]
 
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open ([portfolio-site](https://portfolio-ph-uad.vercel.app)) with your browser to see the result.
 
