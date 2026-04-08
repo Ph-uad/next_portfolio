@@ -1,27 +1,15 @@
 "use client";
 
-import React from "react";
-
 interface CarouselItemProps {
-  children: React.ReactNode;
   classname?: string;
 }
 
-const CarouselItem = ({
-  children,
-  classname,
-}: {
-  children: React.ReactNode;
-  classname?: string;
-}) => {
-
+const CarouselItem = ({ classname }: { classname?: string }) => {
   return (
-    <li className={`w-full h-full flex-shrink-0 flex items-center justify-center text-white text-xl font-bold ${classname ?? ''}`}>
-      <h2>
-        {children}
-      </h2> 
-    </li>
+    <li
+      className={`w-full h-full flex-shrink-0 flex items-center justify-center text-white text-xl font-bold ${classname ?? ""}`}
+    />
   );
-}
+};
 
 export default CarouselItem;

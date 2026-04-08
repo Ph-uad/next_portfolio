@@ -1,11 +1,9 @@
 "use client";
 
-import Logo from "@/public/favIcon.png";
-import { useEffect, useRef, useState } from "react";
+import { use, useEffect, useRef, useState } from "react";
 import { useHandleNavigation } from "@/src/app/_hooks/useHandleNavigation";
 import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
 
 let tabs = [
   { id: "work", label: "Work" },
@@ -16,7 +14,6 @@ const MainNavigation = () => {
   const pathname = usePathname();
   let [activeTab, setActiveTab] = useState(tabs[0].id);
   const handleNavigation = useHandleNavigation();
-  const navigationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     // Set the active tab based on the current pathname on initial render
@@ -29,33 +26,37 @@ const MainNavigation = () => {
   }, [pathname]);
 
   return (
-    <nav className="absolute top-4 left-1/2 -translate-x-1/2 z-[2000] w-fit mx-auto flex justify-center items-center overflow-x-hidden flex-wrap text-[var(--color-text-white)] text-[clamp(1.2rem,2vw,1.4rem)]">
-      <ul className="flex space-x-1 bg-black rounded-full overflow-hidden p-[0.5px]">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-[2000] w-fit mx-auto flex justify-center items-center overflow-x-hidden flex-wrap text-[color:var(--color-text-white)]">
+      <ul className="flex justify-between space-x-0 bg-[var(--color-black)] rounded-full p-0 border border-[var(--color-white)]">
         {tabs.map((tab, index) => (
           <li
             key={tab.id}
-            role="button"
-            tabIndex={0}
-            onClick={() => {
-              setActiveTab(tab.id);
-              handleNavigation(`/${tab.id === "work" ? "" : tab.id}`);
-            }}
-            className={`${activeTab === tab.id ? "" : "hover:scale-105 font-bold  "}
-             relative rounded-full px-6 py-3 text-sm font-medium uppercase text-white outline-sky-400 focus-visible:outline-2 transition-all duration-300 ease-in-out`}
-            style={{ WebkitTapHighlightColor: "transparent" }}
+
+            // style={{ WebkitTapHighlightColor: "transparent" }}
           >
-            {activeTab === tab.id && (
-              <motion.span
-                layoutId="bubble"
-                className="absolute inset-0 z-10 border border-[var(--color-text)] mix-blend-difference flex justify-center items-center"
-                style={{
-                  borderRadius: "999px",
-                  backgroundColor: "var(--color-white)",
-                }}
-                transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-              />
-            )}
-            <span>{tab.label}</span>
+            <button
+              role="button"
+              tabIndex={0}
+              onClick={() => {
+                setActiveTab(tab.id);
+                handleNavigation(`/${tab.id === "work" ? "" : tab.id}`);
+              }}
+              className={`${activeTab === tab.id ? "" : "hover:scale-105 font-bold  "}
+             relative rounded-full px-4 py-2 text-[0.6rem] font-medium capitalize text-[var(--color-white)]  focus-visible:outline-1 focus-visible:outline-white transition-all duration-300 ease-in-out`}
+            >
+              {activeTab === tab.id && (
+                <motion.span
+                  layoutId="bubble"
+                  className="absolute inset-0 z-10 border border-[var(--color-black)] mix-blend-difference flex justify-center items-center"
+                  style={{
+                    borderRadius: "28.5px",
+                    backgroundColor: "var(--color-white)",
+                  }}
+                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                />
+              )}
+              <span>{tab.label}</span>
+            </button>
           </li>
         ))}
       </ul>
