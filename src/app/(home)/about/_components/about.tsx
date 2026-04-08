@@ -160,7 +160,7 @@ const About: React.FC = () => {
                 href="mailto:temidayo26j@gmail.com"
                 className="text-sm text-blue-500"
               >
-                temidayo26j@gmail.com
+                Email
               </Link>
             </li>
             <li>
