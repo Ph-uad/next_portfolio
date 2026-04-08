@@ -59,7 +59,7 @@ export const useHandleNavigation = () => {
         gsap.to(".page", {
           opacity: 0,
           scale: 0.95,
-          duration: 0.5,
+          duration: 0.6,
           ease: "power1.inOut",
         });
       } else if (hasInitialized.current) {
