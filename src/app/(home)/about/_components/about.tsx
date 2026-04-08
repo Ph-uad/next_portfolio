@@ -158,7 +158,7 @@ const About: React.FC = () => {
             <li>
               <Link
                 href="mailto:temidayo26j@gmail.com"
-                className="text-sm text-blue-500"
+                className="text-xs md:text-sm text-blue-500"
               >
                 Email
               </Link>
@@ -166,7 +166,7 @@ const About: React.FC = () => {
             <li>
               <Link
                 href="https://www.linkedin.com/in/temidayo-jimoh-26j/"
-                className="text-sm text-blue-500"
+                className="text-xs md:text-sm text-blue-500"
               >
                 LinkedIn
               </Link>
