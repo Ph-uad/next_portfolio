@@ -11,7 +11,7 @@ export const metadata = {
 
 const AboutPage = () => {
   return (
-    <div className="relative page">
+    <div className="relative page flex flex-col justify-center items-center">
       <header
         className={`${rubik.className} top-4 left-0 sticky w-full text-left text-[--color-primary-transparent-light] text-base  md:text-2xl`}
       >
