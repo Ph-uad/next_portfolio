@@ -55,9 +55,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`} suppressHydrationWarning>
+      <body className={`${inter.className} w-screen flex flex-col justify-between relative bg-[var(--color-black)] text-[var(--color-white)]`} suppressHydrationWarning>
         {children}
       </body>
     </html>
   );
 }
+

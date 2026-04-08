@@ -3,17 +3,17 @@
 import { use, useEffect, useRef, useState } from "react";
 import { useHandleNavigation } from "@/src/app/_hooks/useHandleNavigation";
 import { motion } from "motion/react";
-import { usePathname } from "next/navigation"; 
+import { usePathname } from "next/navigation";
 
 let tabs = [
   { id: "work", label: "Work" },
-  { id: "about", label: "About" }, 
+  { id: "about", label: "About" },
 ];
 
 const MainNavigation = () => {
   const pathname = usePathname();
   let [activeTab, setActiveTab] = useState(tabs[0].id);
-  const handleNavigation = useHandleNavigation();  
+  const handleNavigation = useHandleNavigation();
 
   useEffect(() => {
     // Set the active tab based on the current pathname on initial render
@@ -26,33 +26,37 @@ const MainNavigation = () => {
   }, [pathname]);
 
   return (
-    <nav className="absolute top-4 left-1/2 -translate-x-1/2 z-[2000] w-fit mx-auto flex justify-center items-center overflow-x-hidden flex-wrap text-[color:var(--color-text-white)]">
-      <ul className="flex justify-between space-x-0 bg-[var(--color-black)] rounded-full p-0">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-[2000] w-fit mx-auto flex justify-center items-center overflow-x-hidden flex-wrap text-[color:var(--color-text-white)]">
+      <ul className="flex justify-between space-x-0 bg-[var(--color-black)] rounded-full p-0 border border-[var(--color-white)]">
         {tabs.map((tab, index) => (
           <li
             key={tab.id}
-            role="button"
-            tabIndex={0}
-            onClick={() => {
-              setActiveTab(tab.id);
-              handleNavigation(`/${tab.id === "work" ? "" : tab.id}`);
-            }}
-            className={`${activeTab === tab.id ? "" : "hover:scale-105 font-bold  "}
-             relative rounded-full px-4 py-2 text-[0.6rem] font-medium capitalize text-[var(--color-white)] focus-visible:outline-none transition-all duration-300 ease-in-out`}
-            style={{ WebkitTapHighlightColor: "transparent" }}
+
+            // style={{ WebkitTapHighlightColor: "transparent" }}
           >
-            {activeTab === tab.id && (
-              <motion.span
-                layoutId="bubble"
-                className="absolute inset-0 z-10 border border-[var(--color-black)] mix-blend-difference flex justify-center items-center"
-                style={{
-                  borderRadius: "28.5px",
-                  backgroundColor: "var(--color-white)",
-                }}
-                transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-              />
-            )}
-            <span>{tab.label}</span>
+            <button
+              role="button"
+              tabIndex={0}
+              onClick={() => {
+                setActiveTab(tab.id);
+                handleNavigation(`/${tab.id === "work" ? "" : tab.id}`);
+              }}
+              className={`${activeTab === tab.id ? "" : "hover:scale-105 font-bold  "}
+             relative rounded-full px-4 py-2 text-[0.6rem] font-medium capitalize text-[var(--color-white)]  focus-visible:outline-1 focus-visible:outline-white transition-all duration-300 ease-in-out`}
+            >
+              {activeTab === tab.id && (
+                <motion.span
+                  layoutId="bubble"
+                  className="absolute inset-0 z-10 border border-[var(--color-black)] mix-blend-difference flex justify-center items-center"
+                  style={{
+                    borderRadius: "28.5px",
+                    backgroundColor: "var(--color-white)",
+                  }}
+                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                />
+              )}
+              <span>{tab.label}</span>
+            </button>
           </li>
         ))}
       </ul>

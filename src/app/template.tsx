@@ -1,16 +1,16 @@
 "use client";
 
 import * as React from "react";
-import "./globals.css"; 
 import MainNavigation from "./_components/layouts/navigation/Navigation";
-import Transition from "./_components/layouts/transition/transition";
+
+import "./globals.css";
 
 export default function Template({ children }: { children?: React.ReactNode }) {
   return (
-    <div className="h-screen w-screen flex flex-col justify-between relative">
+    <>
       <MainNavigation />
-      <Transition>{children}</Transition>
+      {children}
       {/* <Footer /> */}
-    </div>
+    </>
   );
 }
