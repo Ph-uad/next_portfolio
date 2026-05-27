@@ -19,7 +19,7 @@ const AboutPage = () => {
         <h2>Romani ٢١</h2>
         <h2> ١-٨</h2>
       </header>
-      <About />
+      {/* <About /> */}
     </div>
   );
 };

@@ -13,8 +13,10 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "rag":
-          "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../public/backgrounds/rag.webp')",
+        "chat-bot":
+          "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../public/backgrounds/chat-bot.webp')",
+        "folders":
+          "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../public/backgrounds/folders.webp')",
         "staining-canvas":
           "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../public/backgrounds/staining-canvas.webp')",
 
