@@ -3,10 +3,10 @@
 import gsap from "gsap";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import CarouselItem from "./carousel_item";
 import { useGSAP } from "@gsap/react";
 import { AnimatePresence } from "framer-motion";
 import { PlusIcon } from "lucide-react";
+import CarouselBackground from "./carousel_background";
 
 const Carousel = () => {
   const container = useRef<HTMLDivElement | null>(null);
@@ -67,7 +67,7 @@ const Carousel = () => {
         <div className="w-full h-full relative">
           <ul className="flex h-full" id="carousel">
             {carouselData.map((item, index) => (
-              <CarouselItem
+              <CarouselBackground
                 key={item.id}
                 classname={`${item.bg} bg-top bg-cover bg-no-repeat`}
               />
@@ -99,10 +99,10 @@ const Carousel = () => {
                 exit={{ y: carouselState.direction * 10, opacity: 0 }}
                 transition={{ duration: 0.2 }}
               >
-                <p className="text-white text-center">
+                <h4 className="text-white text-center text-4xl">
                   {carouselData[carouselState.activeIndex]?.title ??
                     "Project Title"}
-                </p>
+                </h4>
               </motion.div>
               <motion.button
                 key={carouselData[carouselState.activeIndex]?.id + "-right"}
@@ -179,15 +179,17 @@ const Carousel = () => {
 const carouselData = [
   {
     id: 1,
-    title: "Rag",
-    description: "A retrieval-augmented chat over user-uploaded PDFs. Built end-to-end as a portfolio project.",
-    bg: "bg-rag",
+    title: "Retrieval-Augmented Generation (RAG) Chatbot",
+    description:
+      "A retrieval-augmented chat over user-uploaded PDFs. Built end-to-end as a portfolio project.",
+    bg: "bg-chat-bot",
   },
   {
     id: 2,
-    title: "Staining Canvas",
-    description: "A full-stack web application that allows GitHub users to sign in and write documents that can have subdocuments beneath them.",
-    bg: "bg-staining-canvas",
+    title: "Document and Files Management System",
+    description:
+      "A full-stack web application that allows GitHub users to sign in and write documents that can have subdocuments beneath them.",
+    bg: "bg-folders",
   },
 ];
 
