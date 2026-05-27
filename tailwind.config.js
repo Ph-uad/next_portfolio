@@ -13,10 +13,10 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "coming-soon":
-          "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../public/backgrounds/bg-texture2.webp')",
-        "coming-soon2":
-          "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../public/backgrounds/bg-texture3.webp')",
+        "rag":
+          "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../public/backgrounds/rag.webp')",
+        "staining-canvas":
+          "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../public/backgrounds/staining-canvas.webp')",
 
         "card-experience":
           "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../../public/img/cards/hands.jpg')",

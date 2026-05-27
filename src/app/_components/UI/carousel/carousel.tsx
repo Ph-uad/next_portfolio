@@ -179,27 +179,15 @@ const Carousel = () => {
 const carouselData = [
   {
     id: 1,
-    title: "Slider 1",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    bg: "bg-coming-soon",
+    title: "Rag",
+    description: "A retrieval-augmented chat over user-uploaded PDFs. Built end-to-end as a portfolio project.",
+    bg: "bg-rag",
   },
   {
     id: 2,
-    title: "Slider 2",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    bg: "bg-coming-soon2",
-  },
-  {
-    id: 3,
-    title: "Slider 3",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    bg: "bg-red-500",
-  },
-  {
-    id: 4,
-    title: "Slider 4",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    bg: "bg-purple-500",
+    title: "Staining Canvas",
+    description: "A full-stack web application that allows GitHub users to sign in and write documents that can have subdocuments beneath them.",
+    bg: "bg-staining-canvas",
   },
 ];
 
